@@ -4,7 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FISCASOL — Solutions de Normalisation Fiscale & PDV (DGI RDC)</title>
+    <!-- SEO Primary Meta Tags -->
+    <title>FISCASOL — Facture Normalisée, MCF, eMCF & Homologation DGI RDC</title>
+    <meta name="title" content="FISCASOL — Facture Normalisée, MCF, eMCF & Homologation DGI RDC">
+    <meta name="description"
+        content="Solution logicielle pour l'émission de la facture normalisée en RDC. Middleware ERP, systèmes de point de vente (PDV), MCF et eMCF certifiés conformes par la DGI.">
+
+    <!-- Keywords (Optional but helpful for targeted terms) -->
+    <meta name="keywords"
+        content="facture normalisée, DGI, MCF, eMCF, RDC, Kinshasa, système de facturation électronique, iSFE, homologation DGI, logiciel de caisse, ERP DGI">
+
+    <!-- Open Graph / Facebook (For link sharing previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fiscasol.com/">
+    <meta property="og:title" content="FISCASOL — Facture Normalisée & MCF RDC">
+    <meta property="og:description"
+        content="Solution logicielle pour l'émission de la facture normalisée, MCF, et eMCF. 100% conforme aux exigences de la DGI en RDC.">
+    <meta property="og:image" content="./resource/logofiscasol.png">
 
     <!-- Favicon (Browser Tab Logo) -->
     <link rel="icon" type="image/png" href="./resource/logofiscasol.png">
@@ -41,11 +57,43 @@
                             500: '#00a896',
                             600: '#008778',
                         }
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -40px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        }
                     }
                 }
             }
         }
+
     </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RP7E7WHC87"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RP7E7WHC87');
+    </script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <style>
         body {
@@ -57,9 +105,45 @@
             transition: opacity 0.3s ease-in-out;
         }
 
+        /* Glassmorphism Utilities */
         .glass-nav {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 30px -5px rgba(3, 35, 66, 0.05), 0 4px 12px -2px rgba(3, 35, 66, 0.03);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(10, 108, 206, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(10, 108, 206, 0.14);
+        }
+
+        .glass-dark {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        /* Architectural Dot & Grid Patterns */
+        .bg-grid-pattern {
+            background-size: 32px 32px;
+            background-image:
+                linear-gradient(to right, rgba(10, 108, 206, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(10, 108, 206, 0.04) 1px, transparent 1px);
+        }
+
+        .bg-dots-pattern {
+            background-image: radial-gradient(rgba(8, 87, 166, 0.1) 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
         }
 
         /* Scroll Reveal Animation Classes */
@@ -90,20 +174,77 @@
         .construction-banner {
             background: linear-gradient(90deg, #032342 0%, #064482 50%, #032342 100%);
         }
+
+        /* Custom Radio Button Styling for Business Type Grid */
+        .sector-radio:checked+label {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0effe 100%);
+            border-color: #0a6cce;
+            color: #032342;
+            font-weight: 600;
+            box-shadow: 0 4px 14px -2px rgba(10, 108, 206, 0.18);
+        }
+
+        .sector-radio:checked+label .sector-icon-box {
+            background-color: #0a6cce;
+            color: #ffffff;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #1ebe57;
+            color: #FFF;
+        }
+
+        /* Mobile adjustment */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen overflow-x-hidden">
+<body
+    class="bg-slate-50 text-gray-800 antialiased flex flex-col min-h-screen overflow-x-hidden selection:bg-brand-500 selection:text-white">
 
     <!-- Fixed Header Wrapper (Construction Banner + Navigation) -->
     <header class="fixed w-full z-50 top-0">
         <!-- Under Construction Top Banner -->
-        <div class="construction-banner text-white px-4 py-2.5 text-xs sm:text-sm border-b border-brand-700 shadow-sm">
+        <div
+            class="construction-banner text-white px-4 py-2.5 text-xs sm:text-sm border-b border-brand-700/80 shadow-sm">
             <div
                 class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
                 <div class="flex items-center justify-center sm:justify-start space-x-2.5">
                     <span
-                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-400 text-gray-900 uppercase tracking-wider flex-shrink-0">
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-400 text-gray-900 uppercase tracking-wider flex-shrink-0 shadow-sm">
                         <span class="w-1.5 h-1.5 rounded-full bg-gray-900 mr-1.5 animate-ping"></span>
                         <span data-i18n="bannerTag">En construction</span>
                     </span>
@@ -131,7 +272,7 @@
         </div>
 
         <!-- Main Navigation -->
-        <nav class="glass-nav w-full border-b border-gray-200 transition-all duration-300">
+        <nav class="glass-nav w-full border-b border-white/60 shadow-sm transition-all duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-20">
                     <!-- Logo -->
@@ -147,11 +288,12 @@
                         <a href="#features" class="text-gray-600 hover:text-brand-600 font-medium transition-colors"
                             data-i18n="navFeatures">Ce que nous offrons</a>
                         <a href="#demo"
-                            class="px-4 py-2 rounded-xl bg-brand-600 text-white hover:bg-brand-700 font-medium transition-all shadow-sm"
+                            class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 text-white hover:from-brand-700 hover:to-brand-600 font-medium transition-all shadow-md hover:shadow-brand-500/25 transform hover:-translate-y-0.5"
                             data-i18n="navDemo">Nous Contacter</a>
 
                         <!-- Language Toggle -->
-                        <div class="flex items-center space-x-2 bg-gray-100 p-1 rounded-full border border-gray-200">
+                        <div
+                            class="flex items-center space-x-1 bg-gray-100/90 p-1 rounded-full border border-gray-200/80 backdrop-blur-sm">
                             <button onclick="setLanguage('en')" id="btn-lang-en"
                                 class="px-3 py-1 text-sm font-semibold rounded-full text-gray-500 hover:text-gray-900 transition-all duration-200">EN</button>
                             <button onclick="setLanguage('fr')" id="btn-lang-fr"
@@ -173,7 +315,7 @@
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <a href="#secteurs"
                         class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50"
@@ -198,14 +340,15 @@
 
     <main class="flex-grow pt-28 sm:pt-32">
         <!-- Hero Section -->
-        <section class="relative bg-white overflow-hidden">
-            <!-- Background Decorative Elements -->
+        <section class="relative bg-white bg-grid-pattern overflow-hidden">
+            <!-- Animated Glowing Orbs -->
             <div
-                class="absolute top-0 -left-4 w-72 h-72 bg-brand-50 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob">
+                class="absolute top-10 -left-10 w-96 h-96 bg-brand-500/15 rounded-full filter blur-3xl animate-blob pointer-events-none">
             </div>
-            <div
-                class="absolute top-0 -right-4 w-72 h-72 bg-accent-50 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000">
-            </div>
+            <div class="absolute top-20 right-0 w-96 h-96 bg-accent-500/15 rounded-full filter blur-3xl animate-blob pointer-events-none"
+                style="animation-delay: 2s;"></div>
+            <div class="absolute -bottom-20 left-1/3 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-blob pointer-events-none"
+                style="animation-delay: 4s;"></div>
 
             <!-- Engraved Fiscal Symbol Watermark -->
             <div
@@ -224,15 +367,15 @@
 
                 <!-- Text Content -->
                 <div class="lg:w-1/2 lg:pr-12 text-center lg:text-left reveal">
-                    <!-- Badges -->
+                    <!-- Glassy Badges -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-8">
                         <div
-                            class="inline-flex items-center px-4 py-2 rounded-full bg-brand-50 text-brand-700 font-semibold text-sm border border-brand-100">
+                            class="inline-flex items-center px-4 py-2 rounded-full bg-brand-50/90 backdrop-blur-md text-brand-700 font-semibold text-sm border border-brand-200/60 shadow-sm">
                             <span class="flex h-2.5 w-2.5 rounded-full bg-brand-500 mr-2.5 animate-pulse"></span>
                             <span data-i18n="heroBadge">Découvrez FISCASOL & iSFE</span>
                         </div>
                         <div
-                            class="inline-flex items-center px-4 py-2 rounded-full bg-amber-50 text-amber-800 font-medium text-sm border border-amber-200">
+                            class="inline-flex items-center px-4 py-2 rounded-full bg-amber-50/90 backdrop-blur-md text-amber-800 font-medium text-sm border border-amber-200/80 shadow-sm">
                             <svg class="w-4 h-4 mr-1.5 text-amber-600" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -247,7 +390,7 @@
                     <h1
                         class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6 tracking-tight relative">
                         <span data-i18n="heroTitle1">Simplifiez la conformité fiscale en</span> <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-600">RDC</span>
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500">RDC</span>
                     </h1>
                     <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 fade-text leading-relaxed relative"
                         data-i18n="heroSubtitle">
@@ -258,12 +401,12 @@
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start relative">
                         <a href="#demo"
-                            class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg hover:shadow-brand-500/30 transition-all duration-300 transform hover:-translate-y-1"
+                            class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all duration-300 transform hover:-translate-y-1"
                             data-i18n="btnRequestDemo">
                             Contacter un Expert / Démo
                         </a>
                         <a href="#secteurs"
-                            class="inline-flex justify-center items-center px-8 py-4 border-2 border-gray-200 text-lg font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-50 hover:border-gray-300 shadow-sm transition-all duration-300 transform hover:-translate-y-1"
+                            class="inline-flex justify-center items-center px-8 py-4 border border-gray-200/80 text-lg font-medium rounded-xl text-gray-700 bg-white/80 backdrop-blur-md hover:bg-white hover:border-brand-200 shadow-sm transition-all duration-300 transform hover:-translate-y-1"
                             data-i18n="btnLearnMore">
                             Découvrir nos Secteurs
                         </a>
@@ -271,7 +414,7 @@
 
                     <!-- Quick Direct Contact Strip -->
                     <div
-                        class="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 text-sm text-gray-500">
+                        class="mt-8 pt-6 border-t border-gray-200/60 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 text-sm text-gray-500">
                         <span class="font-semibold text-gray-700" data-i18n="heroDirectContact">Contact direct :</span>
                         <a href="mailto:contact@fiscasol.com"
                             class="inline-flex items-center text-brand-600 hover:text-brand-700 font-medium">
@@ -297,20 +440,55 @@
                     </div>
                 </div>
 
-                <!-- Graphic/Illustration -->
+                <!-- Graphic/Illustration with Floating Glass Badges -->
                 <div
                     class="lg:w-1/2 mt-16 lg:mt-0 relative w-full max-w-2xl mx-auto lg:max-w-none reveal delay-200 aspect-[4/3] lg:aspect-auto lg:h-[560px]">
-                    <!-- Background Shadow/Accent -->
+                    <!-- Background Glow & Tilted Glass Card -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-tr from-brand-100 to-accent-100 rounded-2xl transform rotate-3 scale-105 opacity-70 transition-transform duration-700 hover:rotate-6">
+                        class="absolute inset-0 bg-gradient-to-tr from-brand-500/20 via-brand-200/30 to-accent-500/20 rounded-3xl transform rotate-3 scale-105 blur-sm transition-transform duration-700">
                     </div>
 
-                    <!-- Image Container with Shadow -->
+                    <!-- Floating Glass Badge 1 (Top Left) -->
                     <div
-                        class="absolute inset-0 bg-white rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden transition-transform duration-500 hover:-translate-y-2 group">
+                        class="hidden sm:flex items-center space-x-3 glass-card px-4 py-3 rounded-2xl shadow-xl absolute -top-6 -left-6 z-20 animate-float border border-white">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-gray-900" data-i18n="floatBadge1Title">Conformité DGI</p>
+                            <p class="text-[11px] text-gray-500" data-i18n="floatBadge1Sub">Factures Normalisées & QR
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Floating Glass Badge 2 (Bottom Right) -->
+                    <div
+                        class="hidden sm:flex items-center space-x-3 glass-card px-4 py-3 rounded-2xl shadow-xl absolute -bottom-6 -right-4 z-20 animate-float-delayed border border-white">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center text-brand-600 flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-gray-900" data-i18n="floatBadge2Title">ERP & Point de Vente
+                            </p>
+                            <p class="text-[11px] text-gray-500" data-i18n="floatBadge2Sub">Synchronisation & Hors-Ligne
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Main Image Container with Shadow -->
+                    <div
+                        class="absolute inset-0 bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-white flex flex-col overflow-hidden transition-transform duration-500 hover:-translate-y-2 group">
                         <!-- Mockup Header -->
                         <div
-                            class="h-10 border-b border-gray-100 flex items-center px-4 bg-gray-50/80 backdrop-blur-sm flex-shrink-0">
+                            class="h-11 border-b border-gray-100 flex items-center px-4 bg-gray-50/90 backdrop-blur-sm flex-shrink-0">
                             <div class="flex space-x-2">
                                 <div class="w-3 h-3 rounded-full bg-red-400"></div>
                                 <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
@@ -336,21 +514,30 @@
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path
                         d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.93,199.53,109.23,243.68,102.39,287.42,85.22,321.39,56.44Z"
-                        class="fill-gray-50"></path>
+                        class="fill-slate-50"></path>
                 </svg>
             </div>
         </section>
 
         <!-- Sectors Section (Nos Secteurs d'Activité) -->
-        <section id="secteurs" class="py-24 bg-gray-50 border-t border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="secteurs"
+            class="py-24 bg-slate-50 bg-dots-pattern border-t border-gray-200/60 relative overflow-hidden">
+            <!-- Ambient Background Glows -->
+            <div
+                class="absolute top-1/3 -right-24 w-96 h-96 bg-brand-400/10 rounded-full filter blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-10 -left-24 w-96 h-96 bg-accent-400/10 rounded-full filter blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                    <span class="text-brand-600 font-semibold tracking-wide uppercase text-sm fade-text"
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-600 font-semibold tracking-wide uppercase text-xs fade-text mb-3"
                         data-i18n="sectorsTag">
                         Secteurs d'Activité
                     </span>
-                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl fade-text"
-                        data-i18n="sectorsTitle">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl fade-text" data-i18n="sectorsTitle">
                         Des solutions adaptées à chaque taille et secteur d'entreprise
                     </h2>
                     <p class="mt-4 text-xl text-gray-600 fade-text" data-i18n="sectorsSubtitle">
@@ -362,15 +549,19 @@
                 <!-- Featured Sector 1: Grande Entreprise -->
                 <div class="mb-12 reveal">
                     <div
-                        class="bg-gradient-to-br from-brand-900 via-brand-700 to-brand-900 rounded-3xl p-8 md:p-12 text-white shadow-xl border border-brand-600 relative overflow-hidden">
+                        class="bg-gradient-to-br from-brand-900 via-brand-700 to-brand-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl border border-brand-500/40 relative overflow-hidden">
+                        <!-- Glowing Orbs inside the Dark Card -->
                         <div
-                            class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-accent-500 opacity-10 blur-2xl pointer-events-none">
+                            class="absolute top-0 right-0 -mr-16 -mt-16 w-80 h-80 rounded-full bg-accent-500 opacity-20 blur-3xl pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-brand-500 opacity-25 blur-3xl pointer-events-none">
                         </div>
 
                         <div class="lg:flex lg:items-center lg:justify-between gap-10 relative z-10">
                             <div class="lg:w-7/12">
                                 <div
-                                    class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 text-accent-100 text-xs font-semibold uppercase tracking-wider mb-4 border border-white/15">
+                                    class="inline-flex items-center px-3.5 py-1.5 rounded-full glass-dark text-accent-100 text-xs font-semibold uppercase tracking-wider mb-5">
                                     <svg class="w-4 h-4 mr-1.5 text-accent-500" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -390,8 +581,7 @@
                                 </p>
                             </div>
 
-                            <div
-                                class="lg:w-5/12 bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/15">
+                            <div class="lg:w-5/12 glass-dark rounded-2xl p-6 md:p-8 shadow-inner">
                                 <h4 class="text-lg font-bold text-amber-300 mb-3 flex items-center">
                                     <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
@@ -407,7 +597,7 @@
                                     conforme à l'ensemble des exigences réglementaires de la DGI.
                                 </p>
                                 <a href="#demo" onclick="selectSectorInForm('Grande Entreprise')"
-                                    class="inline-flex items-center text-sm font-semibold text-white bg-accent-600 hover:bg-accent-500 px-5 py-2.5 rounded-xl transition-colors shadow-sm">
+                                    class="inline-flex items-center text-sm font-semibold text-white bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 px-5 py-3 rounded-xl transition-all shadow-lg transform hover:-translate-y-0.5">
                                     <span data-i18n="sec1Cta">Planifier une étude d'intégration</span>
                                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -419,14 +609,15 @@
                     </div>
                 </div>
 
-                <!-- Other 5 Sectors Grid -->
+                <!-- Other 5 Sectors Grid (Glassy Cards) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- Sector 2: PME -->
                     <div
-                        class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 reveal delay-100 flex flex-col h-full">
-                        <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-5">
-                            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-100 flex flex-col h-full group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-100/80 group-hover:bg-brand-600 group-hover:text-white text-brand-600 flex items-center justify-center mb-5 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                                 </path>
@@ -442,9 +633,10 @@
 
                     <!-- Sector 3: Commerce -->
                     <div
-                        class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 reveal delay-200 flex flex-col h-full">
-                        <div class="w-12 h-12 rounded-xl bg-accent-100 flex items-center justify-center mb-5">
-                            <svg class="w-6 h-6 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-200 flex flex-col h-full group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-accent-100/80 group-hover:bg-accent-600 group-hover:text-white text-accent-600 flex items-center justify-center mb-5 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                             </svg>
@@ -459,9 +651,10 @@
 
                     <!-- Sector 4: Restaurant -->
                     <div
-                        class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 reveal delay-300 flex flex-col h-full">
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-5">
-                            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-300 flex flex-col h-full group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-amber-100/80 group-hover:bg-amber-500 group-hover:text-white text-amber-600 flex items-center justify-center mb-5 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
                                 </path>
@@ -476,9 +669,10 @@
 
                     <!-- Sector 5: Alimentation -->
                     <div
-                        class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 reveal delay-100 flex flex-col h-full lg:col-span-1">
-                        <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-5">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-100 flex flex-col h-full lg:col-span-1 group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-green-100/80 group-hover:bg-green-600 group-hover:text-white text-green-600 flex items-center justify-center mb-5 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
                                 </path>
@@ -495,9 +689,10 @@
 
                     <!-- Sector 6: Hôtel -->
                     <div
-                        class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 reveal delay-200 flex flex-col h-full lg:col-span-2">
-                        <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-5">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-200 flex flex-col h-full lg:col-span-2 group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-purple-100/80 group-hover:bg-purple-600 group-hover:text-white text-purple-600 flex items-center justify-center mb-5 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                                 </path>
@@ -517,15 +712,20 @@
         </section>
 
         <!-- Offerings / Features Section (Ce que nous offrons) -->
-        <section id="features" class="py-24 bg-white border-t border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="features"
+            class="py-24 bg-white bg-grid-pattern border-t border-gray-200/60 relative overflow-hidden">
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-brand-100/40 to-accent-100/40 rounded-full filter blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                    <span class="text-accent-600 font-semibold tracking-wide uppercase text-sm fade-text"
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-accent-50 border border-accent-100 text-accent-600 font-semibold tracking-wide uppercase text-xs fade-text mb-3"
                         data-i18n="featuresTag">
                         Nos Engagements & Services
                     </span>
-                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl fade-text"
-                        data-i18n="featuresTitle">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl fade-text" data-i18n="featuresTitle">
                         Ce que nous offrons
                     </h2>
                     <p class="mt-4 text-xl text-gray-600 fade-text" data-i18n="featuresSubtitle">
@@ -539,8 +739,8 @@
 
                     <!-- Offering 1: Sécurité et conformité DGI -->
                     <div
-                        class="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 reveal delay-100 h-full flex flex-col">
-                        <div class="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center mb-6">
+                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-100 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center mb-6 shadow-sm">
                             <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
@@ -559,8 +759,9 @@
 
                     <!-- Offering 2: Piste d'audit -->
                     <div
-                        class="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 reveal delay-200 h-full flex flex-col">
-                        <div class="w-14 h-14 rounded-xl bg-slate-200 flex items-center justify-center mb-6">
+                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-200 h-full flex flex-col">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-slate-200/80 flex items-center justify-center mb-6 shadow-sm">
                             <svg class="w-7 h-7 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -579,8 +780,8 @@
 
                     <!-- Offering 3: Personnalisation au système existant -->
                     <div
-                        class="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 reveal delay-300 h-full flex flex-col">
-                        <div class="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center mb-6">
+                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-300 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center mb-6 shadow-sm">
                             <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z">
@@ -598,8 +799,8 @@
 
                     <!-- Offering 4: Fonctionnalités modulaires -->
                     <div
-                        class="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 reveal delay-100 h-full flex flex-col">
-                        <div class="w-14 h-14 rounded-xl bg-accent-100 flex items-center justify-center mb-6">
+                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-100 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-accent-100 flex items-center justify-center mb-6 shadow-sm">
                             <svg class="w-7 h-7 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
@@ -618,10 +819,10 @@
 
                     <!-- Offering 5: Accompagnement de l'homologation complète -->
                     <div
-                        class="bg-brand-50 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-brand-100 transform hover:-translate-y-2 reveal delay-200 h-full flex flex-col lg:col-span-2">
+                        class="bg-gradient-to-br from-brand-50/90 via-white/95 to-accent-50/80 backdrop-blur-xl rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-brand-200/70 transform hover:-translate-y-2 reveal delay-200 h-full flex flex-col lg:col-span-2">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                             <div
-                                class="w-14 h-14 rounded-xl bg-brand-600 flex items-center justify-center flex-shrink-0">
+                                class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-600 to-brand-500 flex items-center justify-center flex-shrink-0 shadow-md">
                                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
@@ -629,7 +830,7 @@
                                 </svg>
                             </div>
                             <span
-                                class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold bg-brand-600 text-white uppercase tracking-wider self-start sm:self-center"
+                                class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-brand-600 text-white uppercase tracking-wider self-start sm:self-center shadow-sm"
                                 data-i18n="feat5Badge">
                                 Clé en main DGI
                             </span>
@@ -646,7 +847,8 @@
 
                         <!-- 3 Pillars: Service, Catalogue, Manuel d'utilisation -->
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-auto">
-                            <div class="bg-white p-4 rounded-xl border border-brand-100 shadow-sm">
+                            <div
+                                class="bg-white/90 backdrop-blur-md p-4 rounded-xl border border-brand-100 shadow-sm hover:border-brand-300 transition-colors">
                                 <div class="font-bold text-brand-700 mb-1 flex items-center">
                                     <span class="w-2 h-2 rounded-full bg-brand-500 mr-2"></span>
                                     <span class="fade-text" data-i18n="feat5Pillar1Title">Service Dédié</span>
@@ -657,7 +859,8 @@
                                 </p>
                             </div>
 
-                            <div class="bg-white p-4 rounded-xl border border-brand-100 shadow-sm">
+                            <div
+                                class="bg-white/90 backdrop-blur-md p-4 rounded-xl border border-brand-100 shadow-sm hover:border-accent-300 transition-colors">
                                 <div class="font-bold text-brand-700 mb-1 flex items-center">
                                     <span class="w-2 h-2 rounded-full bg-accent-500 mr-2"></span>
                                     <span class="fade-text" data-i18n="feat5Pillar2Title">Catalogue Structuré</span>
@@ -668,7 +871,8 @@
                                 </p>
                             </div>
 
-                            <div class="bg-white p-4 rounded-xl border border-brand-100 shadow-sm">
+                            <div
+                                class="bg-white/90 backdrop-blur-md p-4 rounded-xl border border-brand-100 shadow-sm hover:border-amber-300 transition-colors">
                                 <div class="font-bold text-brand-700 mb-1 flex items-center">
                                     <span class="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
                                     <span class="fade-text" data-i18n="feat5Pillar3Title">Manuel d'Utilisation</span>
@@ -685,16 +889,30 @@
             </div>
         </section>
 
-        <!-- Contact & Demo Section -->
-        <section id="demo" class="py-24 bg-gray-50 relative">
-            <div class="absolute inset-0 bg-brand-50 transform -skew-y-2 z-0 origin-top-left"></div>
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 reveal">
+        <!-- Contact & Demo Section (Preserving Who to Contact + New Modern Business Suite Form) -->
+        <section id="demo" class="py-24 bg-slate-50 relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-slate-50 to-accent-50/60 transform -skew-y-2 z-0 origin-top-left">
+            </div>
+            <div
+                class="absolute -top-24 right-1/4 w-96 h-96 bg-brand-400/15 rounded-full filter blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute -bottom-24 left-1/4 w-96 h-96 bg-accent-400/15 rounded-full filter blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 reveal">
                 <div
-                    class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 transition-all hover:shadow-3xl">
-                    <div class="md:flex">
-                        <!-- Who to contact column -->
-                        <div class="md:w-2/5 bg-brand-700 p-8 md:p-10 text-white flex flex-col justify-between">
-                            <div>
+                    class="bg-white/90 backdrop-blur-2xl rounded-3xl shadow-2xl overflow-hidden border border-white transition-all">
+                    <div class="lg:flex">
+                        <!-- Left Column: Who to contact (Preserved) -->
+                        <div
+                            class="lg:w-2/5 bg-gradient-to-br from-brand-900 via-brand-700 to-brand-900 p-8 md:p-10 text-white flex flex-col justify-between relative overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 -mr-12 -mt-12 w-56 h-56 rounded-full bg-accent-500 opacity-15 blur-2xl pointer-events-none">
+                            </div>
+
+                            <div class="relative z-10">
                                 <div
                                     class="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-semibold mb-4 border border-amber-400/30">
                                     <span data-i18n="contactBadge">Site en construction • Contact Direct</span>
@@ -709,7 +927,7 @@
                                     ou lancer votre homologation.
                                 </p>
 
-                                <div class="space-y-5 border-t border-brand-600 pt-6">
+                                <div class="space-y-5 border-t border-white/15 pt-6">
                                     <div>
                                         <p class="text-xs uppercase tracking-wider text-brand-200 font-semibold mb-1"
                                             data-i18n="contactDeptLabel">
@@ -723,8 +941,9 @@
                                     <a href="mailto:contact@fiscasol.com"
                                         class="flex items-center space-x-3 text-brand-100 hover:text-white transition-colors">
                                         <div
-                                            class="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center flex-shrink-0">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            class="w-10 h-10 rounded-xl glass-dark flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-5 h-5 text-accent-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                                                 </path>
@@ -738,8 +957,9 @@
 
                                     <div class="flex items-center space-x-3 text-brand-100">
                                         <div
-                                            class="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center flex-shrink-0">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            class="w-10 h-10 rounded-xl glass-dark flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
                                                 </path>
@@ -756,17 +976,36 @@
                                 </div>
                             </div>
 
-                            <div class="mt-8 pt-4 border-t border-brand-600 text-xs text-brand-200 fade-text"
+                            <div class="mt-8 pt-4 border-t border-white/15 text-xs text-brand-200 fade-text relative z-10"
                                 data-i18n="contactHours">
                                 Réponse rapide garantie sous 24h ouvrées.
                             </div>
                         </div>
 
-                        <!-- Form column -->
-                        <div class="md:w-3/5 p-8 md:p-10 relative">
+                        <!-- Right Column: Upgraded Business Suite Form + EmailJS -->
+                        <div class="lg:w-3/5 p-8 md:p-10 relative bg-white/80">
+                            <!-- Form Header Banner -->
+                            <div class="flex items-center space-x-4 pb-5 mb-6 border-b border-gray-100">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-brand-900 flex items-center justify-center p-2 shadow-md flex-shrink-0">
+                                    <img src="./resource/logofiscasol.png" alt="FISCASOL"
+                                        class="w-full h-full object-contain brightness-0 invert">
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-extrabold text-gray-900 tracking-tight">FISCASOL</h4>
+                                    <p class="text-[11px] font-bold tracking-[0.2em] text-brand-600 uppercase">Business
+                                        Suite</p>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-600 text-sm mb-6 fade-text" data-i18n="formIntro">
+                                Parlez-nous un peu de votre entreprise afin que nous puissions vous mettre en relation
+                                avec le bon expert.
+                            </p>
+
                             <!-- Success Message Overlay -->
                             <div id="success-message"
-                                class="hidden absolute inset-0 bg-white bg-opacity-95 z-20 flex flex-col items-center justify-center p-8 text-center rounded-r-3xl">
+                                class="hidden absolute inset-0 bg-white/95 backdrop-blur-md z-20 flex flex-col items-center justify-center p-8 text-center">
                                 <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 transform scale-0 transition-transform duration-500"
                                     id="success-icon">
                                     <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor"
@@ -792,66 +1031,185 @@
                                 <input type="text" name="_honey" id="honey" style="display:none" tabindex="-1"
                                     autocomplete="off">
 
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <!-- First Name & Last Name -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1 fade-text"
-                                            data-i18n="formName">Nom Complet</label>
-                                        <input type="text" id="name" name="name" required
-                                            class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+                                        <label for="first_name"
+                                            class="block text-sm font-medium text-gray-700 mb-1 fade-text">
+                                            <span data-i18n="formFirstName">Prénom</span> <span
+                                                class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="first_name" name="first_name" required
+                                            class="w-full px-4 py-2.5 bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="last_name"
+                                            class="block text-sm font-medium text-gray-700 mb-1 fade-text">
+                                            <span data-i18n="formLastName">Nom</span> <span
+                                                class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="last_name" name="last_name" required
+                                            class="w-full px-4 py-2.5 bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+                                    </div>
+                                </div>
+
+                                <!-- Phone & Email -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="phone"
+                                            class="block text-sm font-medium text-gray-700 mb-1 fade-text">
+                                            <span data-i18n="formPhone">Numéro de téléphone</span> <span
+                                                class="text-red-500">*</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required
+                                            class="w-full px-4 py-2.5 bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="email"
+                                            class="block text-sm font-medium text-gray-700 mb-1 fade-text">
+                                            <span data-i18n="formEmail">Adresse Email</span> <span
+                                                class="text-red-500">*</span>
+                                        </label>
+                                        <input type="email" id="email" name="email" placeholder="you@company.com"
+                                            required
+                                            class="w-full px-4 py-2.5 bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+                                    </div>
+                                </div>
+
+                                <!-- Country & Company -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="country"
+                                            class="block text-sm font-medium text-gray-700 mb-1 fade-text">
+                                            <span data-i18n="formCountry">Pays</span> <span
+                                                class="text-red-500">*</span>
+                                        </label>
+                                        <select id="country" name="country" required
+                                            class="w-full px-4 py-2.5 bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all text-gray-700">
+                                            <option value="République Démocratique du Congo">République Démocratique du
+                                                Congo</option>
+                                            <option value="Congo">Congo (Brazzaville)</option>
+                                            <option value="Autre">Autre / Other</option>
+                                        </select>
                                     </div>
                                     <div>
                                         <label for="company"
                                             class="block text-sm font-medium text-gray-700 mb-1 fade-text"
                                             data-i18n="formCompany">Nom de l'Entreprise</label>
-                                        <input type="text" id="company" name="company" required
-                                            class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+                                        <input type="text" id="company" name="company" placeholder="Optionnel"
+                                            class="w-full px-4 py-2.5 bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
                                     </div>
                                 </div>
 
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                    <div>
-                                        <label for="email"
-                                            class="block text-sm font-medium text-gray-700 mb-1 fade-text"
-                                            data-i18n="formEmail">Adresse Email</label>
-                                        <input type="email" id="email" name="email" required
-                                            class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
-                                    </div>
-                                    <div>
-                                        <label for="phone"
-                                            class="block text-sm font-medium text-gray-700 mb-1 fade-text"
-                                            data-i18n="formPhone">Numéro de Téléphone</label>
-                                        <input type="tel" id="phone" name="phone" required
-                                            class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
-                                    </div>
-                                </div>
-
+                                <!-- Interactive Business Type Selector (All 6 Sectors) -->
                                 <div>
-                                    <label for="sector" class="block text-sm font-medium text-gray-700 mb-1 fade-text"
-                                        data-i18n="formSector">Votre Secteur d'Activité</label>
-                                    <select id="sector" name="sector" required
-                                        class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all text-gray-700">
-                                        <option value="Grande Entreprise" data-i18n="optSector1">Grande Entreprise
-                                            (Intergiciel / ERP)</option>
-                                        <option value="PME" data-i18n="optSector2">PME</option>
-                                        <option value="Commerce" data-i18n="optSector3">Commerce / Boutique</option>
-                                        <option value="Restaurant" data-i18n="optSector4">Restaurant</option>
-                                        <option value="Alimentation" data-i18n="optSector5">Alimentation / Supermarché
-                                        </option>
-                                        <option value="Hotel" data-i18n="optSector6">Hôtel / Hébergement</option>
-                                    </select>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2 fade-text">
+                                        <span data-i18n="formBusinessType">Votre Secteur d'Activité</span> <span
+                                            class="text-red-500">*</span>
+                                    </label>
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                                        <div>
+                                            <input type="radio" name="business_type" id="type_ge"
+                                                value="Grande Entreprise" class="sector-radio hidden" required>
+                                            <label for="type_ge"
+                                                class="flex items-center p-2.5 bg-gray-50/90 border border-gray-200 rounded-xl cursor-pointer hover:bg-white transition-all text-xs sm:text-sm text-gray-700">
+                                                <span
+                                                    class="sector-icon-box w-7 h-7 rounded-lg bg-gray-200/70 flex items-center justify-center mr-2 text-gray-600 transition-colors">🏢</span>
+                                                <span class="truncate" data-i18n="optGE">Grande Entreprise</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="business_type" id="type_pme" value="PME"
+                                                class="sector-radio hidden">
+                                            <label for="type_pme"
+                                                class="flex items-center p-2.5 bg-gray-50/90 border border-gray-200 rounded-xl cursor-pointer hover:bg-white transition-all text-xs sm:text-sm text-gray-700">
+                                                <span
+                                                    class="sector-icon-box w-7 h-7 rounded-lg bg-gray-200/70 flex items-center justify-center mr-2 text-gray-600 transition-colors">💼</span>
+                                                <span class="truncate" data-i18n="optPME">PME</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="business_type" id="type_retail" value="Commerce"
+                                                class="sector-radio hidden">
+                                            <label for="type_retail"
+                                                class="flex items-center p-2.5 bg-gray-50/90 border border-gray-200 rounded-xl cursor-pointer hover:bg-white transition-all text-xs sm:text-sm text-gray-700">
+                                                <span
+                                                    class="sector-icon-box w-7 h-7 rounded-lg bg-gray-200/70 flex items-center justify-center mr-2 text-gray-600 transition-colors">🛍️</span>
+                                                <span class="truncate" data-i18n="optRetail">Commerce</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="business_type" id="type_restaurant"
+                                                value="Restaurant" class="sector-radio hidden">
+                                            <label for="type_restaurant"
+                                                class="flex items-center p-2.5 bg-gray-50/90 border border-gray-200 rounded-xl cursor-pointer hover:bg-white transition-all text-xs sm:text-sm text-gray-700">
+                                                <span
+                                                    class="sector-icon-box w-7 h-7 rounded-lg bg-gray-200/70 flex items-center justify-center mr-2 text-gray-600 transition-colors">🍽️</span>
+                                                <span class="truncate" data-i18n="optRestaurant">Restaurant</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="business_type" id="type_grocery"
+                                                value="Alimentation" class="sector-radio hidden">
+                                            <label for="type_grocery"
+                                                class="flex items-center p-2.5 bg-gray-50/90 border border-gray-200 rounded-xl cursor-pointer hover:bg-white transition-all text-xs sm:text-sm text-gray-700">
+                                                <span
+                                                    class="sector-icon-box w-7 h-7 rounded-lg bg-gray-200/70 flex items-center justify-center mr-2 text-gray-600 transition-colors">🛒</span>
+                                                <span class="truncate" data-i18n="optGrocery">Alimentation</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="business_type" id="type_hotel" value="Hotel"
+                                                class="sector-radio hidden">
+                                            <label for="type_hotel"
+                                                class="flex items-center p-2.5 bg-gray-50/90 border border-gray-200 rounded-xl cursor-pointer hover:bg-white transition-all text-xs sm:text-sm text-gray-700">
+                                                <span
+                                                    class="sector-icon-box w-7 h-7 rounded-lg bg-gray-200/70 flex items-center justify-center mr-2 text-gray-600 transition-colors">🏨</span>
+                                                <span class="truncate" data-i18n="optHotel">Hôtel</span>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
 
+                                <!-- Message -->
                                 <div>
                                     <label for="message" class="block text-sm font-medium text-gray-700 mb-1 fade-text"
                                         data-i18n="formMessage">Message / Système existant ou besoins
                                         spécifiques</label>
                                     <textarea id="message" name="message" rows="3"
-                                        class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all resize-none"></textarea>
+                                        class="w-full px-4 py-2.5 bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all resize-none"></textarea>
+                                </div>
+
+                                <!-- Human Verification Checkbox -->
+                                <div
+                                    class="flex items-center justify-between p-3.5 bg-gray-50/90 border border-gray-200 rounded-xl">
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="human" required
+                                            class="h-4 w-4 text-brand-600 border-gray-300 rounded focus:ring-brand-500 cursor-pointer">
+                                        <label for="human"
+                                            class="ml-3 block text-sm font-medium text-gray-700 cursor-pointer"
+                                            data-i18n="formHuman">
+                                            Je suis humain
+                                        </label>
+                                    </div>
+                                    <svg class="h-5 w-5 text-brand-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="text-xs text-gray-500 fade-text" data-i18n="formTrouble">
+                                    Des problèmes pour soumettre ? Envoyez un email à <a
+                                        href="mailto:contact@fiscasol.com"
+                                        class="text-brand-600 font-semibold hover:underline">contact@fiscasol.com</a>
+                                    pour demander votre démo.
                                 </div>
 
                                 <div>
                                     <button type="submit" id="submit-btn"
-                                        class="w-full flex items-center justify-center py-3.5 px-4 border border-transparent rounded-xl shadow-sm text-base font-semibold text-white bg-brand-600 hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-all transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed">
+                                        class="w-full flex items-center justify-center py-3.5 px-4 border border-transparent rounded-xl shadow-lg shadow-brand-500/20 text-base font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-all transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed">
                                         <svg id="submit-spinner"
                                             class="hidden animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -861,8 +1219,8 @@
                                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
                                             </path>
                                         </svg>
-                                        <span id="submit-btn-text" class="fade-text" data-i18n="formSubmit">Envoyer la
-                                            Demande</span>
+                                        <span id="submit-btn-text" class="fade-text" data-i18n="formSubmit">Demander une
+                                            Démo</span>
                                     </button>
                                 </div>
                             </form>
@@ -903,9 +1261,14 @@
     </footer>
 
     <script>
-        // Destination emails configuration
-        const PRIMARY_EMAIL = "stephane.muissa@fiscasol.com";
-        const CC_EMAIL = "contact@fiscasol.com";
+        /* 
+        =========================================
+        INITIALISATION EMAILJS 
+        =========================================
+        */
+        (function () {
+            emailjs.init("KVwty-_QIYENsleIr");
+        })();
 
         const translations = {
             en: {
@@ -922,6 +1285,10 @@
                 btnRequestDemo: "Contact an Expert / Demo",
                 btnLearnMore: "Explore Our Sectors",
                 heroDirectContact: "Direct contact:",
+                floatBadge1Title: "DGI Compliance",
+                floatBadge1Sub: "Normalized Invoices & QR",
+                floatBadge2Title: "ERP & Point of Sale",
+                floatBadge2Sub: "Real-Time & Offline Sync",
 
                 sectorsTag: "Business Sectors",
                 sectorsTitle: "Tailored solutions for every business size and industry",
@@ -973,20 +1340,25 @@
                 contactLocLabel: "Address",
                 contactHours: "Fast response guaranteed within 24 business hours.",
 
-                formName: "Full Name",
-                formCompany: "Company Name",
+                formIntro: "Tell us a little about your business so we can connect you with the right expert.",
+                formFirstName: "First name",
+                formLastName: "Last name",
+                formPhone: "Phone number",
                 formEmail: "Email Address",
-                formPhone: "Phone Number",
-                formSector: "Your Business Sector",
-                optSector1: "Large Enterprise (Middleware / ERP)",
-                optSector2: "SME (PME)",
-                optSector3: "Retail / Shop",
-                optSector4: "Restaurant",
-                optSector5: "Supermarket / Grocery",
-                optSector6: "Hotel / Hospitality",
+                formCountry: "Country",
+                formCompany: "Company Name",
+                formBusinessType: "Business Type",
+                optGE: "Large Enterprise",
+                optPME: "SME (PME)",
+                optRetail: "Retail",
+                optRestaurant: "Restaurant",
+                optGrocery: "Grocery",
+                optHotel: "Hotel",
                 formMessage: "Message / Existing system or specific needs",
-                formSubmit: "Send Request",
-                formSending: "Sending request...",
+                formHuman: "I am human",
+                formTrouble: 'Having trouble submitting? Email <a href="mailto:contact@fiscasol.com" class="text-brand-600 font-semibold hover:underline">contact@fiscasol.com</a> to request your demo.',
+                formSubmit: "Request Demo",
+                formSending: "Sending...",
                 successTitle: "Thank You!",
                 successDesc: "Your request has been sent to our team. We will contact you shortly to schedule your demo.",
                 btnNewRequest: "Submit Another Request",
@@ -1007,6 +1379,10 @@
                 btnRequestDemo: "Contacter un Expert / Démo",
                 btnLearnMore: "Découvrir nos Secteurs",
                 heroDirectContact: "Contact direct :",
+                floatBadge1Title: "Conformité DGI",
+                floatBadge1Sub: "Factures Normalisées & QR",
+                floatBadge2Title: "ERP & Point de Vente",
+                floatBadge2Sub: "Synchronisation & Hors-Ligne",
 
                 sectorsTag: "Secteurs d'Activité",
                 sectorsTitle: "Des solutions adaptées à chaque taille et secteur d'entreprise",
@@ -1058,19 +1434,24 @@
                 contactLocLabel: "Adresse",
                 contactHours: "Réponse rapide garantie sous 24h ouvrées.",
 
-                formName: "Nom Complet",
-                formCompany: "Nom de l'Entreprise",
+                formIntro: "Parlez-nous un peu de votre entreprise afin que nous puissions vous mettre en relation avec le bon expert.",
+                formFirstName: "Prénom",
+                formLastName: "Nom",
+                formPhone: "Numéro de téléphone",
                 formEmail: "Adresse Email",
-                formPhone: "Numéro de Téléphone",
-                formSector: "Votre Secteur d'Activité",
-                optSector1: "Grande Entreprise (Intergiciel / ERP)",
-                optSector2: "PME",
-                optSector3: "Commerce / Boutique",
-                optSector4: "Restaurant",
-                optSector5: "Alimentation / Supermarché",
-                optSector6: "Hôtel / Hébergement",
+                formCountry: "Pays",
+                formCompany: "Nom de l'Entreprise",
+                formBusinessType: "Votre Secteur d'Activité",
+                optGE: "Grande Entreprise",
+                optPME: "PME",
+                optRetail: "Commerce",
+                optRestaurant: "Restaurant",
+                optGrocery: "Alimentation",
+                optHotel: "Hôtel",
                 formMessage: "Message / Système existant ou besoins spécifiques",
-                formSubmit: "Envoyer la Demande",
+                formHuman: "Je suis humain",
+                formTrouble: 'Des problèmes pour soumettre ? Envoyez un email à <a href="mailto:contact@fiscasol.com" class="text-brand-600 font-semibold hover:underline">contact@fiscasol.com</a> pour demander votre démo.',
+                formSubmit: "Demander une Démo",
                 formSending: "Envoi en cours...",
                 successTitle: "Merci !",
                 successDesc: "Votre demande a bien été envoyée à notre équipe. Nous vous contacterons sous peu pour planifier votre démonstration.",
@@ -1086,7 +1467,7 @@
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
-                    el.textContent = translations[lang][key];
+                    el.innerHTML = translations[lang][key];
                 }
                 el.style.opacity = '1';
             });
@@ -1119,9 +1500,9 @@
         }
 
         function selectSectorInForm(sectorValue) {
-            const sectorSelect = document.getElementById('sector');
-            if (sectorSelect) {
-                sectorSelect.value = sectorValue;
+            const radio = document.querySelector(`input[name="business_type"][value="${sectorValue}"]`);
+            if (radio) {
+                radio.checked = true;
             }
         }
 
@@ -1158,74 +1539,80 @@
                 return;
             }
 
-            const name = document.getElementById('name').value.trim();
-            const company = document.getElementById('company').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const sector = document.getElementById('sector').value;
-            const message = document.getElementById('message').value.trim();
-
             const submitBtn = document.getElementById('submit-btn');
             const submitSpinner = document.getElementById('submit-spinner');
             const submitBtnText = document.getElementById('submit-btn-text');
 
-            // Set Loading UI State
             submitBtn.disabled = true;
             submitSpinner.classList.remove('hidden');
             submitBtnText.textContent = translations[currentLang].formSending;
 
-            const payload = {
-                _subject: `Nouvelle Demande de Démo FISCASOL — ${company} (${sector})`,
-                _cc: CC_EMAIL,
-                _replyto: email,
-                _template: "table",
-                _captcha: "false",
-                "Nom Complet": name,
-                "Entreprise": company,
-                "Email Client": email,
-                "Téléphone": phone,
-                "Secteur d'Activité": sector,
-                "Message / Besoins": message || "Non spécifié"
+            /* 
+            =========================================
+            ID DU SERVICE ET DU MODÈLE EMAILJS
+            =========================================
+            */
+            const serviceID = 'service_y29rgy7';
+            const templateID = 'template_gfdmz8j';
+
+            const isEnglish = currentLang === 'en';
+            const firstName = document.getElementById('first_name').value.trim();
+            const logoUrl = "https://www.fiscasol.com/resource/logofiscasol.png";
+
+            const dynamicReplySubject = isEnglish
+                ? "Demo Request Received - FISCASOL"
+                : "Demande de démo reçue - FISCASOL";
+
+            const dynamicReplyMessage = isEnglish
+                ? `<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1f2937; max-width: 600px; line-height: 1.6;">
+                       <img src="${logoUrl}" alt="FISCASOL" style="height: 40px; margin-bottom: 20px;">
+                       <p>Hello <strong>${firstName}</strong>,</p>
+                       <p>Thank you for reaching out! Our team has successfully received your demo request for the <strong>Fiscasol Business Suite</strong>.</p>
+                       <p>We are currently reviewing your details and will get back to you shortly to schedule a session with one of our experts.</p>
+                       <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;">
+                       <p style="font-size: 14px; color: #4b5563;">
+                           Best regards,<br>
+                           <strong style="color: #0857a6;">The FISCASOL Team</strong><br>
+                           <a href="mailto:contact@fiscasol.com" style="color: #0a6cce; text-decoration: none;">contact@fiscasol.com</a>
+                       </p>
+                   </div>`
+                : `<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1f2937; max-width: 600px; line-height: 1.6;">
+                       <img src="${logoUrl}" alt="FISCASOL" style="height: 40px; margin-bottom: 20px;">
+                       <p>Bonjour <strong>${firstName}</strong>,</p>
+                       <p>Merci de nous avoir contactés ! Notre équipe a bien reçu votre demande de démonstration pour la <strong>Business Suite Fiscasol</strong>.</p>
+                       <p>Nous analysons actuellement vos besoins et reviendrons vers vous très prochainement pour planifier une session avec l'un de nos experts.</p>
+                       <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;">
+                       <p style="font-size: 14px; color: #4b5563;">
+                           Cordialement,<br>
+                           <strong style="color: #0857a6;">L'équipe FISCASOL</strong><br>
+                           <a href="mailto:contact@fiscasol.com" style="color: #0a6cce; text-decoration: none;">contact@fiscasol.com</a>
+                       </p>
+                   </div>`;
+
+            const businessTypeElement = document.querySelector('input[name="business_type"]:checked');
+            const businessType = businessTypeElement ? businessTypeElement.value : "Non spécifié";
+
+            const templateParams = {
+                first_name: firstName,
+                last_name: document.getElementById('last_name').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                country: document.getElementById('country').value,
+                company: document.getElementById('company').value.trim() || "Non spécifié",
+                business_type: businessType,
+                message: document.getElementById('message').value.trim() || "Aucun message",
+                reply_subject: dynamicReplySubject,
+                reply_message: dynamicReplyMessage
             };
 
             try {
-                const response = await fetch(`https://formsubmit.co/ajax/${PRIMARY_EMAIL}`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-
-                if (response.ok) {
-                    if (result.message && result.message.includes("Activation")) {
-                        console.info("Note Admin FISCASOL : Vérifiez la boîte mail contact@fiscasol.com pour cliquer une seule fois sur 'Activate Form'.");
-                    }
-                    showSuccessScreen();
-                } else {
-                    throw new Error(result.message || "Erreur réseau");
-                }
-            } catch (error) {
-                console.warn("Envoi direct indisponible (ex: ouverture en file://), bascule vers mailto :", error);
-
-                const subject = encodeURIComponent(`Demande de Démo FISCASOL - ${company} (${sector})`);
-                const body = encodeURIComponent(
-                    `Bonjour l'équipe FISCASOL,\n\n` +
-                    `Voici une nouvelle demande de démonstration :\n\n` +
-                    `- Nom Complet : ${name}\n` +
-                    `- Entreprise : ${company}\n` +
-                    `- Email : ${email}\n` +
-                    `- Téléphone : ${phone}\n` +
-                    `- Secteur d'Activité : ${sector}\n` +
-                    `- Message / Besoins : ${message || 'Non spécifié'}\n\n` +
-                    `Cordialement,\n${name}`
-                );
-
-                window.location.href = `mailto:${PRIMARY_EMAIL}?cc=${CC_EMAIL}&subject=${subject}&body=${body}`;
+                await emailjs.send(serviceID, templateID, templateParams);
                 showSuccessScreen();
+            } catch (error) {
+                console.error('Erreur EmailJS:', error);
+                alert(isEnglish
+                    ? "An error occurred while sending. Please use the direct email link below."
+                    : "Une erreur est survenue lors de l'envoi. Veuillez utiliser le lien d'email direct au bas du formulaire.");
             } finally {
                 submitBtn.disabled = false;
                 submitSpinner.classList.add('hidden');
@@ -1259,6 +1646,17 @@
             document.getElementById('success-icon').classList.add('scale-0');
         }
     </script>
+
+
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/243835933727?text=Bonjour,%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20la%20facture%20normalisée%20DGI."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+            <path
+                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+        </svg>
+    </a>
 </body>
 
 </html>
