@@ -10,11 +10,11 @@
     <meta name="description"
         content="Solution logicielle pour l'émission de la facture normalisée en RDC. Middleware ERP, systèmes de point de vente (PDV), MCF et eMCF certifiés conformes par la DGI.">
 
-    <!-- Keywords (Optional but helpful for targeted terms) -->
+    <!-- Keywords -->
     <meta name="keywords"
         content="facture normalisée, DGI, MCF, eMCF, RDC, Kinshasa, système de facturation électronique, iSFE, homologation DGI, logiciel de caisse, ERP DGI">
 
-    <!-- Open Graph / Facebook (For link sharing previews) -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.fiscasol.com/">
     <meta property="og:title" content="FISCASOL — Facture Normalisée & MCF RDC">
@@ -22,7 +22,7 @@
         content="Solution logicielle pour l'émission de la facture normalisée, MCF, et eMCF. 100% conforme aux exigences de la DGI en RDC.">
     <meta property="og:image" content="./resource/logofiscasol.png">
 
-    <!-- Favicon (Browser Tab Logo) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./resource/logofiscasol.png">
     <link rel="shortcut icon" type="image/png" href="./resource/logofiscasol.png">
     <link rel="apple-touch-icon" href="./resource/logofiscasol.png">
@@ -79,7 +79,6 @@
                 }
             }
         }
-
     </script>
 
     <!-- Google tag (gtag.js) -->
@@ -88,9 +87,32 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-RP7E7WHC87');
     </script>
+
+    <!-- Event snippet for Outbound click conversion page -->
+    <script>
+        gtag('event', 'conversion', { 'send_to': 'AW-16966987022/p32tCKHzjrwaEI7avpo_' });
+    </script>
+
+    <!-- Event snippet for Outbound click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16966987022/p32tCKHzjrwaEI7avpo_',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
+
 
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -144,6 +166,10 @@
         .bg-dots-pattern {
             background-image: radial-gradient(rgba(8, 87, 166, 0.1) 1.5px, transparent 1.5px);
             background-size: 24px 24px;
+        }
+
+        .bg-tech-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
 
         /* Scroll Reveal Animation Classes */
@@ -215,7 +241,6 @@
             color: #FFF;
         }
 
-        /* Mobile adjustment */
         @media (max-width: 768px) {
             .whatsapp-float {
                 width: 50px;
@@ -235,39 +260,46 @@
 <body
     class="bg-slate-50 text-gray-800 antialiased flex flex-col min-h-screen overflow-x-hidden selection:bg-brand-500 selection:text-white">
 
-    <!-- Fixed Header Wrapper (Construction Banner + Navigation) -->
+    <!-- Fixed Header Wrapper -->
     <header class="fixed w-full z-50 top-0">
-        <!-- Under Construction Top Banner -->
+        <!-- Top Banner -->
         <div
-            class="construction-banner text-white px-4 py-2.5 text-xs sm:text-sm border-b border-brand-700/80 shadow-sm">
+            class="bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white px-4 py-3 text-xs sm:text-sm border-b border-red-700 shadow-md relative overflow-hidden">
+            <!-- Motif hachuré d'alerte en arrière-plan (très subtil) -->
             <div
-                class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-                <div class="flex items-center justify-center sm:justify-start space-x-2.5">
+                class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgNDBsNDAtNDBIMjBMMCAyMHYyMHptNDAgMEwyMCAwaDIwbDIwIDIwdjIweiIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=')] pointer-events-none">
+            </div>
+
+            <div
+                class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left relative z-10">
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 w-full">
+
+                    <!-- Badge d'Alerte (Jaune et Rouge avec Icône et pulsation) -->
                     <span
-                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-400 text-gray-900 uppercase tracking-wider flex-shrink-0 shadow-sm">
-                        <span class="w-1.5 h-1.5 rounded-full bg-gray-900 mr-1.5 animate-ping"></span>
-                        <span data-i18n="bannerTag">En construction</span>
-                    </span>
-                    <span class="text-brand-50 font-medium fade-text" data-i18n="bannerText">
-                        Notre nouveau site web est en cours de finalisation. Nos équipes restent pleinement disponibles
-                        pour vos projets de conformité DGI.
-                    </span>
-                </div>
-                <div class="flex items-center space-x-4 flex-shrink-0">
-                    <a href="mailto:contact@fiscasol.com"
-                        class="text-amber-300 hover:text-amber-200 font-semibold underline underline-offset-2 transition-colors">
-                        contact@fiscasol.com
-                    </a>
-                    <span class="text-brand-500 hidden sm:inline">|</span>
-                    <a href="#demo"
-                        class="hidden sm:inline-flex items-center text-white hover:text-amber-300 font-semibold transition-colors">
-                        <span data-i18n="bannerContactBtn">Nous contacter</span>
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="inline-flex items-center px-3 py-1 rounded-full text-[11px] sm:text-xs font-extrabold bg-yellow-400 text-red-900 uppercase tracking-widest flex-shrink-0 shadow-sm animate-pulse">
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                            </path>
                         </svg>
-                    </a>
+                        <span data-i18n="bannerTag">ALERTE DGI</span>
+                    </span>
+
+                    <!-- Texte de l'alerte -->
+                    <span class="text-white font-medium fade-text leading-snug" data-i18n="bannerText">
+                        La DGI en RDC <strong class="text-yellow-300 font-extrabold">sanctionne désormais</strong> les
+                        contribuables qui ne sont pas en conformité avec la facturation normalisée. Les acheteurs
+                        peuvent signaler les contrevenants.
+                    </span>
                 </div>
+
+                <!-- Bouton d'Action Immédiate -->
+                <!-- <div class="flex items-center flex-shrink-0 mt-2 sm:mt-0">
+                    <a href="#demo"
+                        class="inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-white text-red-600 font-bold text-xs hover:bg-gray-100 transition-colors shadow-sm whitespace-nowrap transform hover:scale-105 duration-200">
+                        Se mettre en conformité
+                    </a>
+                </div> -->
             </div>
         </div>
 
@@ -284,9 +316,9 @@
                     <!-- Desktop Menu -->
                     <div class="hidden md:flex space-x-8 items-center">
                         <a href="#secteurs" class="text-gray-600 hover:text-brand-600 font-medium transition-colors"
-                            data-i18n="navSectors">Nos Secteurs</a>
+                            data-i18n="navSectors">Nos services</a>
                         <a href="#features" class="text-gray-600 hover:text-brand-600 font-medium transition-colors"
-                            data-i18n="navFeatures">Ce que nous offrons</a>
+                            data-i18n="navFeatures">Notre suite logicielle</a>
                         <a href="#demo"
                             class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 text-white hover:from-brand-700 hover:to-brand-600 font-medium transition-all shadow-md hover:shadow-brand-500/25 transform hover:-translate-y-0.5"
                             data-i18n="navDemo">Nous Contacter</a>
@@ -319,10 +351,10 @@
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <a href="#secteurs"
                         class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50"
-                        data-i18n="navSectors">Nos Secteurs</a>
+                        data-i18n="navSectors">Nos services</a>
                     <a href="#features"
                         class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50"
-                        data-i18n="navFeatures">Ce que nous offrons</a>
+                        data-i18n="navFeatures">Notre suite logicielle</a>
                     <a href="#demo"
                         class="block px-3 py-2 rounded-md text-base font-medium text-brand-600 font-semibold hover:bg-brand-50"
                         data-i18n="navDemo">Nous Contacter</a>
@@ -341,7 +373,6 @@
     <main class="flex-grow pt-28 sm:pt-32">
         <!-- Hero Section -->
         <section class="relative bg-white bg-grid-pattern overflow-hidden">
-            <!-- Animated Glowing Orbs -->
             <div
                 class="absolute top-10 -left-10 w-96 h-96 bg-brand-500/15 rounded-full filter blur-3xl animate-blob pointer-events-none">
             </div>
@@ -350,7 +381,6 @@
             <div class="absolute -bottom-20 left-1/3 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-blob pointer-events-none"
                 style="animation-delay: 4s;"></div>
 
-            <!-- Engraved Fiscal Symbol Watermark -->
             <div
                 class="absolute -top-32 -left-32 md:-top-20 md:-left-10 lg:top-0 lg:left-0 opacity-[0.03] pointer-events-none z-0 transform -rotate-12 scale-110">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -365,14 +395,12 @@
             <div
                 class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-32 lg:pt-24 lg:pb-40 flex flex-col lg:flex-row items-center relative z-10">
 
-                <!-- Text Content -->
                 <div class="lg:w-1/2 lg:pr-12 text-center lg:text-left reveal">
-                    <!-- Glassy Badges -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-8">
                         <div
                             class="inline-flex items-center px-4 py-2 rounded-full bg-brand-50/90 backdrop-blur-md text-brand-700 font-semibold text-sm border border-brand-200/60 shadow-sm">
                             <span class="flex h-2.5 w-2.5 rounded-full bg-brand-500 mr-2.5 animate-pulse"></span>
-                            <span data-i18n="heroBadge">Découvrez FISCASOL & iSFE</span>
+                            <span data-i18n="heroBadge">Fiscasol 2026 Suites</span>
                         </div>
                         <div
                             class="inline-flex items-center px-4 py-2 rounded-full bg-amber-50/90 backdrop-blur-md text-amber-800 font-medium text-sm border border-amber-200/80 shadow-sm">
@@ -382,37 +410,36 @@
                                     d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
                                 </path>
                             </svg>
-                            <span data-i18n="heroConstructionBadge">Portail en construction • Service 100%
-                                opérationnel</span>
+                            <span data-i18n="heroConstructionBadge">Notre suite logicielle pour les ventes, la paie et
+                                la comptabilité</span>
                         </div>
                     </div>
 
                     <h1
                         class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6 tracking-tight relative">
-                        <span data-i18n="heroTitle1">Simplifiez la conformité fiscale en</span> <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500">RDC</span>
+                        <span data-i18n="heroTitle1">Solutions logicielles homologuées par la</span> <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500">DGI</span>
                     </h1>
                     <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 fade-text leading-relaxed relative"
                         data-i18n="heroSubtitle">
-                        Solutions de facturation électronique normalisée, intergiciel (middleware) pour ERP et systèmes
-                        de point de vente (PDV) conformes aux exigences de la DGI. Nous vous accompagnons jusqu'à
-                        l'homologation complète.
+                        La Suite Fiscasol 2026 est une solution logicielle de gestion des points de vente homologuée par
+                        la DGI et adaptée aux entreprises de services, hôtels, restaurants, boulangeries, pâtisseries,
+                        bars, boutiques, supermarchés, pharmacies, etc.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start relative">
                         <a href="#demo"
                             class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all duration-300 transform hover:-translate-y-1"
                             data-i18n="btnRequestDemo">
-                            Contacter un Expert / Démo
+                            Contacter un Expert pour une démo
                         </a>
                         <a href="#secteurs"
                             class="inline-flex justify-center items-center px-8 py-4 border border-gray-200/80 text-lg font-medium rounded-xl text-gray-700 bg-white/80 backdrop-blur-md hover:bg-white hover:border-brand-200 shadow-sm transition-all duration-300 transform hover:-translate-y-1"
                             data-i18n="btnLearnMore">
-                            Découvrir nos Secteurs
+                            Découvrir notre solution des factures normalisées
                         </a>
                     </div>
 
-                    <!-- Quick Direct Contact Strip -->
                     <div
                         class="mt-8 pt-6 border-t border-gray-200/60 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 text-sm text-gray-500">
                         <span class="font-semibold text-gray-700" data-i18n="heroDirectContact">Contact direct :</span>
@@ -440,15 +467,12 @@
                     </div>
                 </div>
 
-                <!-- Graphic/Illustration with Floating Glass Badges -->
                 <div
                     class="lg:w-1/2 mt-16 lg:mt-0 relative w-full max-w-2xl mx-auto lg:max-w-none reveal delay-200 aspect-[4/3] lg:aspect-auto lg:h-[560px]">
-                    <!-- Background Glow & Tilted Glass Card -->
                     <div
                         class="absolute inset-0 bg-gradient-to-tr from-brand-500/20 via-brand-200/30 to-accent-500/20 rounded-3xl transform rotate-3 scale-105 blur-sm transition-transform duration-700">
                     </div>
 
-                    <!-- Floating Glass Badge 1 (Top Left) -->
                     <div
                         class="hidden sm:flex items-center space-x-3 glass-card px-4 py-3 rounded-2xl shadow-xl absolute -top-6 -left-6 z-20 animate-float border border-white">
                         <div
@@ -465,7 +489,6 @@
                         </div>
                     </div>
 
-                    <!-- Floating Glass Badge 2 (Bottom Right) -->
                     <div
                         class="hidden sm:flex items-center space-x-3 glass-card px-4 py-3 rounded-2xl shadow-xl absolute -bottom-6 -right-4 z-20 animate-float-delayed border border-white">
                         <div
@@ -483,10 +506,8 @@
                         </div>
                     </div>
 
-                    <!-- Main Image Container with Shadow -->
                     <div
                         class="absolute inset-0 bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-white flex flex-col overflow-hidden transition-transform duration-500 hover:-translate-y-2 group">
-                        <!-- Mockup Header -->
                         <div
                             class="h-11 border-b border-gray-100 flex items-center px-4 bg-gray-50/90 backdrop-blur-sm flex-shrink-0">
                             <div class="flex space-x-2">
@@ -496,19 +517,18 @@
                             </div>
                             <div
                                 class="mx-auto text-xs font-semibold text-gray-400 group-hover:text-brand-600 transition-colors">
-                                FISCASOL • iSFE Solution</div>
+                                FISCASOL • Solution in Action</div>
                         </div>
 
-                        <!-- Login Image -->
                         <div class="flex-grow w-full relative bg-[#0f172a] p-2 sm:p-4">
-                            <img src="./resource/iSFE_Login.png" alt="iSFE Login Screen"
-                                class="w-full h-full object-contain rounded-lg shadow-inner">
+                            <img src="./resource/banniere-restaurant.webp"
+                                alt="Restaurant & Point de Vente Facture Normalisée"
+                                class="w-full h-full object-cover rounded-lg shadow-inner">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Wave Separator -->
             <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0">
                 <svg class="relative block w-full h-[60px] md:h-[100px]" data-name="Layer 1"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -519,10 +539,9 @@
             </div>
         </section>
 
-        <!-- Sectors Section (Nos Secteurs d'Activité) -->
+        <!-- Section 1 : Intégration (Anciennement Secteurs) -->
         <section id="secteurs"
             class="py-24 bg-slate-50 bg-dots-pattern border-t border-gray-200/60 relative overflow-hidden">
-            <!-- Ambient Background Glows -->
             <div
                 class="absolute top-1/3 -right-24 w-96 h-96 bg-brand-400/10 rounded-full filter blur-3xl pointer-events-none">
             </div>
@@ -531,38 +550,43 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
                 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                     <span
                         class="inline-block px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-600 font-semibold tracking-wide uppercase text-xs fade-text mb-3"
                         data-i18n="sectorsTag">
-                        Secteurs d'Activité
+                        NOS SERVICES
                     </span>
                     <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl fade-text" data-i18n="sectorsTitle">
-                        Des solutions adaptées à chaque taille et secteur d'entreprise
+                        Gardez votre logiciel de facturation. Fiscasol s’occupe de la conformité !
                     </h2>
                     <p class="mt-4 text-xl text-gray-600 fade-text" data-i18n="sectorsSubtitle">
-                        De l'intergiciel connecté aux ERP des grandes entreprises jusqu'aux points de vente spécialisés,
-                        nous répondons aux réalités opérationnelles de votre métier.
+                        Vous avez déjà investi dans un logiciel de facturation et ne souhaitez pas en changer ? Notre
+                        plugin s’intègre facilement à votre système existant pour vous aider à répondre aux exigences de
+                        conformité de la DGI.<br><br>Avec Fiscasol, bénéficiez de l’expertise et de l’accompagnement
+                        nécessaires pour préparer et faciliter votre démarche d’homologation.
                     </p>
                 </div>
 
-                <!-- Featured Sector 1: Grande Entreprise -->
+                <!-- Featured Sector 1: Grande Entreprise (RE-DESIGN TECH & MIDDLEWARE) -->
                 <div class="mb-12 reveal">
                     <div
-                        class="bg-gradient-to-br from-brand-900 via-brand-700 to-brand-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl border border-brand-500/40 relative overflow-hidden">
-                        <!-- Glowing Orbs inside the Dark Card -->
+                        class="bg-gradient-to-br from-brand-900 via-brand-800 to-brand-950 rounded-[2rem] p-8 md:p-12 text-white shadow-[0_20px_50px_-12px_rgba(3,35,66,0.5)] relative overflow-hidden border border-brand-700/50">
+                        <!-- Tech / Glowing Background Effects -->
                         <div
-                            class="absolute top-0 right-0 -mr-16 -mt-16 w-80 h-80 rounded-full bg-accent-500 opacity-20 blur-3xl pointer-events-none">
+                            class="absolute top-0 right-0 -mr-16 -mt-16 w-80 h-80 rounded-full bg-accent-500/20 blur-3xl pointer-events-none">
                         </div>
                         <div
-                            class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-brand-500 opacity-25 blur-3xl pointer-events-none">
+                            class="absolute bottom-0 left-0 -ml-16 -mb-16 w-80 h-80 rounded-full bg-brand-500/30 blur-3xl pointer-events-none">
                         </div>
+                        <div class="absolute inset-0 bg-tech-pattern opacity-50 pointer-events-none"></div>
 
-                        <div class="lg:flex lg:items-center lg:justify-between gap-10 relative z-10">
-                            <div class="lg:w-7/12">
+                        <div class="lg:flex lg:items-center lg:justify-between gap-12 relative z-10">
+                            <!-- Left Content Block -->
+                            <div class="lg:w-1/2">
                                 <div
-                                    class="inline-flex items-center px-3.5 py-1.5 rounded-full glass-dark text-accent-100 text-xs font-semibold uppercase tracking-wider mb-5">
-                                    <svg class="w-4 h-4 mr-1.5 text-accent-500" fill="none" stroke="currentColor"
+                                    class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-accent-100 text-xs font-semibold uppercase tracking-wider mb-5 border border-white/10 shadow-inner">
+                                    <svg class="w-4 h-4 mr-1.5 text-accent-400" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
@@ -570,326 +594,399 @@
                                     </svg>
                                     <span data-i18n="sec1Badge">Grande Entreprise • Intégration ERP & Middleware</span>
                                 </div>
-                                <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 fade-text"
-                                    data-i18n="sec1Title">
-                                    Solution de normalisation des factures pour les grandes entreprises
-                                </h3>
-                                <p class="text-brand-100 text-lg leading-relaxed mb-6 fade-text" data-i18n="sec1Desc1">
-                                    Nous proposons un intergiciel (middleware) conçu pour s'intégrer en toute fluidité à
-                                    votre progiciel de gestion (ERP) afin de faciliter et accélérer votre mise en
-                                    conformité.
-                                </p>
-                            </div>
 
-                            <div class="lg:w-5/12 glass-dark rounded-2xl p-6 md:p-8 shadow-inner">
-                                <h4 class="text-lg font-bold text-amber-300 mb-3 flex items-center">
-                                    <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                    </svg>
-                                    <span class="fade-text" data-i18n="sec1SubTitle">Un intergiciel flexible pour une
-                                        conformité accélérée :</span>
-                                </h4>
-                                <p class="text-brand-50 text-base leading-relaxed mb-6 fade-text" data-i18n="sec1Desc2">
-                                    Grâce à une architecture adaptable, notre middleware s'intègre au cœur de vos
-                                    systèmes existants pour délivrer une solution logicielle complète, pleinement
-                                    conforme à l'ensemble des exigences réglementaires de la DGI.
+                                <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 fade-text leading-tight"
+                                    data-i18n="sec1Title">
+                                    Grandes entreprises : accélérez votre mise en conformité sans bouleverser votre
+                                    système de facturation !
+                                </h3>
+
+                                <!-- Intégration du texte descriptif ET de la boîte à puces visuelles -->
+                                <p class="text-brand-100 text-sm sm:text-base leading-relaxed mb-6 fade-text"
+                                    data-i18n="sec1Desc">
+                                    Simplifiez votre mise en conformité avec Fiscasol grâce à notre intergiciel
+                                    (middleware), conçu pour s’intégrer harmonieusement à votre progiciel de gestion
+                                    intégré (ERP) ou système de facturation. Automatisez les échanges de données,
+                                    optimisez vos processus de facturation et accélérez votre mise en conformité, tout
+                                    en préservant le fonctionnement de votre système existant.<br><br>Nos experts vous
+                                    accompagneront également dans la constitution du dossier de demande d’homologation
+                                    ainsi que dans la rédaction des cas de test, afin de faciliter et d’accélérer le
+                                    processus d’homologation.
                                 </p>
-                                <a href="#demo" onclick="selectSectorInForm('Grande Entreprise')"
-                                    class="inline-flex items-center text-sm font-semibold text-white bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 px-5 py-3 rounded-xl transition-all shadow-lg transform hover:-translate-y-0.5">
-                                    <span data-i18n="sec1Cta">Planifier une étude d'intégration</span>
-                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
+
+                                <!-- Boîte discrète pour faire ressortir les bénéfices clés (Bullet Points) -->
+                                <div class="bg-brand-900/40 border border-white/5 rounded-xl p-5 mb-8 backdrop-blur-sm">
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start fade-text">
+                                            <div
+                                                class="flex-shrink-0 w-5 h-5 rounded-full bg-accent-500/20 flex items-center justify-center border border-accent-500/30 mt-0.5 mr-3">
+                                                <svg class="w-3 h-3 text-accent-400" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </div>
+                                            <p class="text-brand-50 text-sm leading-relaxed" data-i18n="sec1Bullet1">
+                                                <strong>Intergiciel transparent :</strong> S’intègre harmonieusement à
+                                                votre ERP existant.
+                                            </p>
+                                        </li>
+                                        <li class="flex items-start fade-text">
+                                            <div
+                                                class="flex-shrink-0 w-5 h-5 rounded-full bg-accent-500/20 flex items-center justify-center border border-accent-500/30 mt-0.5 mr-3">
+                                                <svg class="w-3 h-3 text-accent-400" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </div>
+                                            <p class="text-brand-50 text-sm leading-relaxed" data-i18n="sec1Bullet2">
+                                                <strong>Automatisation :</strong> Sécurise les échanges et génère la
+                                                facture normalisée.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <a href="#demo"
+                                    class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-accent-500 text-white font-semibold hover:bg-accent-400 transition-colors shadow-lg shadow-accent-500/25 fade-text"
+                                    data-i18n="sec1Cta">
+                                    Planifier une étude d'intégration
                                 </a>
                             </div>
+
+                            <!-- Right Image Block with Floating UI elements -->
+                            <div class="lg:w-1/2 mt-10 lg:mt-0 relative group">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-brand-900/50 p-1">
+                                    <img src="./resource/noservice.webp"
+                                        alt="Solution d'intégration middleware ERP DGI RDC Fiscasol"
+                                        class="w-full h-auto max-h-[380px] object-cover rounded-xl block transition-transform duration-700 group-hover:scale-105">
+                                </div>
+
+                                <!-- Floating Data Sync Badge -->
+                                <div
+                                    class="absolute -bottom-5 -left-5 lg:-bottom-6 lg:-left-8 glass-nav px-4 py-3 rounded-2xl shadow-xl flex items-center space-x-3 border border-white animate-float z-20">
+                                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-gray-900 leading-tight">Sync ERP Active</p>
+                                        <p class="text-[10px] font-medium text-green-600">Connexion sécurisée DGI</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Other 5 Sectors Grid (Glassy Cards) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Sector 2: PME -->
-                    <div
-                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-100 flex flex-col h-full group">
+                <!-- Grille Fonctionnalités -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 reveal">
+                    <div class="glass-card p-8 rounded-3xl transition-all duration-300">
                         <div
-                            class="w-12 h-12 rounded-xl bg-brand-100/80 group-hover:bg-brand-600 group-hover:text-white text-brand-600 flex items-center justify-center mb-5 transition-colors">
+                            class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-600 mb-6 shadow-sm">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 fade-text" data-i18n="sec2Title">PME</h3>
-                        <p class="text-gray-600 leading-relaxed flex-grow fade-text" data-i18n="sec2Desc">
-                            Une solution clé en main, agile et accessible pour normaliser vos factures rapidement. Gérez
-                            vos devis, factures clients, avoirs et obligations fiscales DGI sans alourdir votre gestion
-                            quotidienne.
-                        </p>
-                    </div>
-
-                    <!-- Sector 3: Commerce -->
-                    <div
-                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-200 flex flex-col h-full group">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-accent-100/80 group-hover:bg-accent-600 group-hover:text-white text-accent-600 flex items-center justify-center mb-5 transition-colors">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 fade-text" data-i18n="sec3Title">Commerce &
-                            Boutiques</h3>
-                        <p class="text-gray-600 leading-relaxed flex-grow fade-text" data-i18n="sec3Desc">
-                            Encaissement rapide au comptoir, suivi des stocks en temps réel, gestion multi-magasins et
-                            émission instantanée de tickets et factures normalisés avec code QR réglementaire DGI.
-                        </p>
-                    </div>
-
-                    <!-- Sector 4: Restaurant -->
-                    <div
-                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-300 flex flex-col h-full group">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-amber-100/80 group-hover:bg-amber-500 group-hover:text-white text-amber-600 flex items-center justify-center mb-5 transition-colors">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 fade-text" data-i18n="sec4Title">Restaurant</h3>
-                        <p class="text-gray-600 leading-relaxed flex-grow fade-text" data-i18n="sec4Desc">
-                            Interface tactile intuitive avec gestion du plan de salle et statut des tables, envoi des
-                            commandes en cuisine, division d'additions et impression immédiate de la facture normalisée.
-                        </p>
-                    </div>
-
-                    <!-- Sector 5: Alimentation -->
-                    <div
-                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-100 flex flex-col h-full lg:col-span-1 group">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-green-100/80 group-hover:bg-green-600 group-hover:text-white text-green-600 flex items-center justify-center mb-5 transition-colors">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 fade-text" data-i18n="sec5Title">Alimentation &
-                            Supermarchés</h3>
-                        <p class="text-gray-600 leading-relaxed flex-grow fade-text" data-i18n="sec5Desc">
-                            Conçu pour les forts flux en caisse : lecture code-barres haute vitesse, connexion aux
-                            balances et TPE, résilience hors-ligne pour ne jamais bloquer vos ventes et clôtures X/Z
-                            simplifiées.
-                        </p>
-                    </div>
-
-                    <!-- Sector 6: Hôtel -->
-                    <div
-                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-200 flex flex-col h-full lg:col-span-2 group">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-purple-100/80 group-hover:bg-purple-600 group-hover:text-white text-purple-600 flex items-center justify-center mb-5 transition-colors">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 fade-text" data-i18n="sec6Title">Hôtel &
-                            Hébergement</h3>
-                        <p class="text-gray-600 leading-relaxed flex-grow fade-text" data-i18n="sec6Desc">
-                            Centralisez la facturation des séjours, du restaurant, du bar et des prestations annexes sur
-                            une note unique. Émettez des factures normalisées B2B (avec NIF client) ou B2C en toute
-                            fluidité lors du check-out.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Offerings / Features Section (Ce que nous offrons) -->
-        <section id="features"
-            class="py-24 bg-white bg-grid-pattern border-t border-gray-200/60 relative overflow-hidden">
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-brand-100/40 to-accent-100/40 rounded-full filter blur-3xl pointer-events-none">
-            </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                    <span
-                        class="inline-block px-4 py-1.5 rounded-full bg-accent-50 border border-accent-100 text-accent-600 font-semibold tracking-wide uppercase text-xs fade-text mb-3"
-                        data-i18n="featuresTag">
-                        Nos Engagements & Services
-                    </span>
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl fade-text" data-i18n="featuresTitle">
-                        Ce que nous offrons
-                    </h2>
-                    <p class="mt-4 text-xl text-gray-600 fade-text" data-i18n="featuresSubtitle">
-                        Une approche complète alliant technologie fiscale certifiée, flexibilité d'intégration et
-                        accompagnement de bout en bout.
-                    </p>
-                </div>
-
-                <!-- Offerings Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Offering 1: Sécurité et conformité DGI -->
-                    <div
-                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-100 h-full flex flex-col">
-                        <div class="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center mb-6 shadow-sm">
-                            <svg class="w-7 h-7 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 fade-text" data-i18n="feat1Title">
-                            Sécurité & Conformité DGI
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed fade-text flex-grow" data-i18n="feat1Desc">
-                            Solution 100% conforme aux demandes et cahiers des charges de la DGI. Connexion sécurisée au
-                            dispositif fiscal, signature électronique et génération des éléments réglementaires sur
-                            chaque facture.
-                        </p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="feat1Title">Sécurité & Conformité
+                            DGI</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="feat1Desc">Solution 100% conforme
+                            aux demandes et cahiers des charges de la DGI. Connexion sécurisée au dispositif fiscal,
+                            signature électronique et génération des éléments réglementaires sur chaque facture.</p>
                     </div>
 
-                    <!-- Offering 2: Piste d'audit -->
-                    <div
-                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-200 h-full flex flex-col">
+                    <div class="glass-card p-8 rounded-3xl transition-all duration-300">
                         <div
-                            class="w-14 h-14 rounded-xl bg-slate-200/80 flex items-center justify-center mb-6 shadow-sm">
-                            <svg class="w-7 h-7 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-600 mb-6 shadow-sm">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 fade-text" data-i18n="feat2Title">
-                            Piste d'Audit Complète
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="feat2Title">Piste d'Audit Complète
                         </h3>
-                        <p class="text-gray-600 leading-relaxed fade-text flex-grow" data-i18n="feat2Desc">
-                            Journal d'audit inaltérable et horodaté garantissant une traçabilité totale de toutes les
-                            opérations (émissions, annulations, avoirs, accès utilisateurs) pour une transparence
-                            absolue lors des contrôles.
-                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="feat2Desc">Journal d'audit
+                            inaltérable et horodaté garantissant une traçabilité totale de toutes les opérations
+                            (émissions, annulations, avoirs, accès utilisateurs) pour une transparence absolue lors des
+                            contrôles.</p>
                     </div>
 
-                    <!-- Offering 3: Personnalisation au système existant -->
-                    <div
-                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-300 h-full flex flex-col">
-                        <div class="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center mb-6 shadow-sm">
-                            <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="glass-card p-8 rounded-3xl transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-600 mb-6 shadow-sm">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z">
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 fade-text" data-i18n="feat3Title">
-                            Personnalisation au Système Existant
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed fade-text flex-grow" data-i18n="feat3Desc">
-                            Adaptation sur-mesure à votre architecture actuelle (ERP, logiciels comptables ou métiers,
-                            bases de données, import Excel ou API) sans perturber vos habitudes de travail.
-                        </p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="feat3Title">Personnalisation au
+                            Système Existant</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="feat3Desc">Adaptation sur-mesure à
+                            votre architecture actuelle (ERP, logiciels comptables ou métiers, bases de données, import
+                            Excel ou API) sans perturber vos habitudes de travail.</p>
                     </div>
+                </div>
 
-                    <!-- Offering 4: Fonctionnalités modulaires -->
-                    <div
-                        class="glass-card rounded-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 reveal delay-100 h-full flex flex-col">
-                        <div class="w-14 h-14 rounded-xl bg-accent-100 flex items-center justify-center mb-6 shadow-sm">
-                            <svg class="w-7 h-7 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 reveal">
+                    <div class="lg:col-span-4 glass-card p-8 rounded-3xl transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-6 shadow-sm">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 fade-text" data-i18n="feat4Title">
-                            Fonctionnalités Modulaires
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed fade-text flex-grow" data-i18n="feat4Desc">
-                            Une plateforme évolutive où vous activez les modules correspondant à vos besoins : point de
-                            vente tactile, facturation en masse, gestion des stocks, tables, fidélité et rapports
-                            fiscaux A, X, Z.
-                        </p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="feat4Title">Fonctionnalités
+                            Modulaires</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="feat4Desc">Une plateforme évolutive
+                            où vous activez les modules correspondant à vos besoins : point de vente tactile,
+                            facturation en masse, gestion des stocks, tables, fidélité et rapports fiscaux A, X, Z.</p>
                     </div>
 
-                    <!-- Offering 5: Accompagnement de l'homologation complète -->
-                    <div
-                        class="bg-gradient-to-br from-brand-50/90 via-white/95 to-accent-50/80 backdrop-blur-xl rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-brand-200/70 transform hover:-translate-y-2 reveal delay-200 h-full flex flex-col lg:col-span-2">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                            <div
-                                class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-600 to-brand-500 flex items-center justify-center flex-shrink-0 shadow-md">
-                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
-                                    </path>
-                                </svg>
-                            </div>
+                    <div class="lg:col-span-8 glass-card p-8 sm:p-10 rounded-3xl relative overflow-hidden">
+                        <div class="absolute top-6 right-6">
                             <span
-                                class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-brand-600 text-white uppercase tracking-wider self-start sm:self-center shadow-sm"
-                                data-i18n="feat5Badge">
-                                Clé en main DGI
-                            </span>
+                                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-brand-100 text-brand-800"
+                                data-i18n="feat5Badge">CLÉ EN MAIN DGI</span>
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="feat5Title">Accompagnement de
+                            l'Homologation Complète</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed" data-i18n="feat5Desc">Nous ne nous contentons pas
+                            de fournir un logiciel : nous vous accompagnons à chaque étape administrative et technique
+                            pour garantir l'homologation complète de votre système auprès de la DGI.</p>
 
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 fade-text" data-i18n="feat5Title">
-                            Accompagnement de l'Homologation Complète
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed mb-6 fade-text" data-i18n="feat5Desc">
-                            Nous ne nous contentons pas de fournir un logiciel : nous vous accompagnons à chaque étape
-                            administrative et technique pour garantir l'homologation complète de votre système auprès de
-                            la DGI.
-                        </p>
-
-                        <!-- 3 Pillars: Service, Catalogue, Manuel d'utilisation -->
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-auto">
-                            <div
-                                class="bg-white/90 backdrop-blur-md p-4 rounded-xl border border-brand-100 shadow-sm hover:border-brand-300 transition-colors">
-                                <div class="font-bold text-brand-700 mb-1 flex items-center">
-                                    <span class="w-2 h-2 rounded-full bg-brand-500 mr-2"></span>
-                                    <span class="fade-text" data-i18n="feat5Pillar1Title">Service Dédié</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-white/80 p-4 rounded-2xl border border-gray-100 shadow-sm">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                                    <h4 class="font-bold text-gray-900 text-sm" data-i18n="feat5Pillar1Title">Service
+                                        Dédié</h4>
                                 </div>
-                                <p class="text-xs text-gray-600 fade-text" data-i18n="feat5Pillar1Desc">
-                                    Assistance technique, déploiement sur site ou à distance, suivi du dossier
-                                    d'homologation et formation.
+                                <p class="text-xs text-gray-500" data-i18n="feat5Pillar1Desc">Assistance technique,
+                                    déploiement sur site ou à distance, suivi du dossier d'homologation et formation.
                                 </p>
                             </div>
-
-                            <div
-                                class="bg-white/90 backdrop-blur-md p-4 rounded-xl border border-brand-100 shadow-sm hover:border-accent-300 transition-colors">
-                                <div class="font-bold text-brand-700 mb-1 flex items-center">
-                                    <span class="w-2 h-2 rounded-full bg-accent-500 mr-2"></span>
-                                    <span class="fade-text" data-i18n="feat5Pillar2Title">Catalogue Structuré</span>
+                            <div class="bg-white/80 p-4 rounded-2xl border border-gray-100 shadow-sm">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    <h4 class="font-bold text-gray-900 text-sm" data-i18n="feat5Pillar2Title">Catalogue
+                                        Structuré</h4>
                                 </div>
-                                <p class="text-xs text-gray-600 fade-text" data-i18n="feat5Pillar2Desc">
-                                    Configuration et normalisation de votre catalogue d'articles, prestations et groupes
-                                    de taxation DGI.
+                                <p class="text-xs text-gray-500" data-i18n="feat5Pillar2Desc">Configuration et
+                                    normalisation de votre catalogue d'articles, prestations et groupes de taxation DGI.
                                 </p>
                             </div>
-
-                            <div
-                                class="bg-white/90 backdrop-blur-md p-4 rounded-xl border border-brand-100 shadow-sm hover:border-amber-300 transition-colors">
-                                <div class="font-bold text-brand-700 mb-1 flex items-center">
-                                    <span class="w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
-                                    <span class="fade-text" data-i18n="feat5Pillar3Title">Manuel d'Utilisation</span>
+                            <div class="bg-white/80 p-4 rounded-2xl border border-gray-100 shadow-sm">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                    <h4 class="font-bold text-gray-900 text-sm" data-i18n="feat5Pillar3Title">Manuel
+                                        d'Utilisation</h4>
                                 </div>
-                                <p class="text-xs text-gray-600 fade-text" data-i18n="feat5Pillar3Desc">
-                                    Fourniture de la documentation technique et du manuel d'utilisation requis pour la
-                                    conformité et vos équipes.
-                                </p>
+                                <p class="text-xs text-gray-500" data-i18n="feat5Pillar3Desc">Fourniture de la
+                                    documentation technique et du manuel d'utilisation requis pour la conformité et vos
+                                    équipes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2 : Suite Logicielle avec Grille Immersive -->
+                <div id="features" class="text-center max-w-3xl mx-auto mb-12 reveal pt-16 border-t border-gray-200">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-semibold tracking-wide uppercase text-xs mb-3 fade-text"
+                        data-i18n="featuresTag">
+                        NOS ENGAGEMENTS & SERVICES
+                    </span>
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl fade-text" data-i18n="featuresTitle">
+                        Notre suite logicielle Fiscasol Suite 2026
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 fade-text" data-i18n="featuresSubtitle">
+                        Notre suite logicielle Fiscasol Suite 2026 propose une solution de facturation homologuée par la
+                        DGI en RDC. Elle permet de produire des factures normalisées et de répondre aux besoins de
+                        plusieurs secteurs d'activités.
+                    </p>
+                </div>
+
+                <!-- Grille Secteurs Immersive (Hover Zoom & Slide-Up) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 reveal">
+
+                    <!-- PME -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl h-[340px] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Logiciel PME Fiscasol"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#032342] via-[#032342]/60 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100">
+                        </div>
+                        <div class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                            <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 border border-white/30 shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1" data-i18n="sec2Title">PME</h3>
+                                <div class="overflow-hidden">
+                                    <p class="text-gray-200 text-sm leading-relaxed opacity-0 max-h-0 group-hover:max-h-[200px] group-hover:opacity-100 group-hover:mt-3 transition-all duration-500 ease-in-out"
+                                        data-i18n="sec2Desc">
+                                        Une solution clé en main, agile et accessible pour normaliser vos factures
+                                        rapidement. Gérez vos devis, factures clients, avoirs et obligations fiscales
+                                        DGI sans alourdir votre gestion quotidienne.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Commerce & Boutiques -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl h-[340px] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Caisse Commerce Fiscasol"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#008778] via-[#008778]/60 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100">
+                        </div>
+                        <div class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                            <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 border border-white/30 shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1" data-i18n="sec3Title">Commerce &
+                                    Boutiques</h3>
+                                <div class="overflow-hidden">
+                                    <p class="text-gray-200 text-sm leading-relaxed opacity-0 max-h-0 group-hover:max-h-[200px] group-hover:opacity-100 group-hover:mt-3 transition-all duration-500 ease-in-out"
+                                        data-i18n="sec3Desc">
+                                        Encaissement rapide au comptoir, suivi des stocks en temps réel, gestion
+                                        multi-magasins et émission instantanée de tickets et factures normalisés avec
+                                        code QR réglementaire DGI.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Restaurant -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl h-[340px] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Logiciel Restaurant Fiscasol"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-amber-600 via-amber-600/60 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100">
+                        </div>
+                        <div class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                            <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 border border-white/30 shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477-4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1" data-i18n="sec4Title">Restaurant</h3>
+                                <div class="overflow-hidden">
+                                    <p class="text-gray-200 text-sm leading-relaxed opacity-0 max-h-0 group-hover:max-h-[200px] group-hover:opacity-100 group-hover:mt-3 transition-all duration-500 ease-in-out"
+                                        data-i18n="sec4Desc">
+                                        Interface tactile intuitive avec gestion du plan de salle et statut des tables,
+                                        envoi des commandes en cuisine, division d'additions et impression immédiate de
+                                        la facture normalisée.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alimentation & Supermarchés -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl h-[340px] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Caisse Supermarché Fiscasol"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-teal-700 via-teal-700/60 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100">
+                        </div>
+                        <div class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                            <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 border border-white/30 shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1" data-i18n="sec5Title">Alimentation &
+                                    Supermarchés</h3>
+                                <div class="overflow-hidden">
+                                    <p class="text-gray-200 text-sm leading-relaxed opacity-0 max-h-0 group-hover:max-h-[200px] group-hover:opacity-100 group-hover:mt-3 transition-all duration-500 ease-in-out"
+                                        data-i18n="sec5Desc">
+                                        Conçu pour les forts flux en caisse : lecture code-barres haute vitesse,
+                                        connexion aux balances et TPE, résilience hors-ligne pour ne jamais bloquer vos
+                                        ventes et clôtures X/Z simplifiées.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hôtel & Hébergement -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl h-[340px] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer lg:col-span-2">
+                        <img src="https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="Logiciel Hôtel Fiscasol"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-purple-800 via-purple-800/60 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100">
+                        </div>
+                        <div class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                            <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4 border border-white/30 shadow-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1" data-i18n="sec6Title">Hôtel & Hébergement
+                                </h3>
+                                <div class="overflow-hidden">
+                                    <p class="text-gray-200 text-sm leading-relaxed opacity-0 max-h-0 group-hover:max-h-[200px] group-hover:opacity-100 group-hover:mt-3 transition-all duration-500 ease-in-out"
+                                        data-i18n="sec6Desc">
+                                        Centralisez la facturation des séjours, du restaurant, du bar et des prestations
+                                        annexes sur une note unique. Émettez des factures normalisées B2B (avec NIF
+                                        client) ou B2C en toute fluidité lors du check-out.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact & Demo Section (Preserving Who to Contact + New Modern Business Suite Form) -->
+        <!-- Contact & Demo Section -->
         <section id="demo" class="py-24 bg-slate-50 relative overflow-hidden">
             <div
                 class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-slate-50 to-accent-50/60 transform -skew-y-2 z-0 origin-top-left">
@@ -905,7 +1002,7 @@
                 <div
                     class="bg-white/90 backdrop-blur-2xl rounded-3xl shadow-2xl overflow-hidden border border-white transition-all">
                     <div class="lg:flex">
-                        <!-- Left Column: Who to contact (Preserved) -->
+                        <!-- Left Column: Who to contact -->
                         <div
                             class="lg:w-2/5 bg-gradient-to-br from-brand-900 via-brand-700 to-brand-900 p-8 md:p-10 text-white flex flex-col justify-between relative overflow-hidden">
                             <div
@@ -913,10 +1010,6 @@
                             </div>
 
                             <div class="relative z-10">
-                                <div
-                                    class="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-semibold mb-4 border border-amber-400/30">
-                                    <span data-i18n="contactBadge">Site en construction • Contact Direct</span>
-                                </div>
                                 <h3 class="text-2xl font-bold mb-3 fade-text" data-i18n="contactTitle">
                                     Qui contacter ?
                                 </h3>
@@ -982,7 +1075,7 @@
                             </div>
                         </div>
 
-                        <!-- Right Column: Upgraded Business Suite Form + EmailJS -->
+                        <!-- Right Column: Upgraded Business Suite Form -->
                         <div class="lg:w-3/5 p-8 md:p-10 relative bg-white/80">
                             <!-- Form Header Banner -->
                             <div class="flex items-center space-x-4 pb-5 mb-6 border-b border-gray-100">
@@ -1027,11 +1120,10 @@
 
                             <!-- Form -->
                             <form id="demo-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
-                                <!-- Anti-spam Honeypot field -->
+                                <!-- Anti-spam Honeypot -->
                                 <input type="text" name="_honey" id="honey" style="display:none" tabindex="-1"
                                     autocomplete="off">
 
-                                <!-- First Name & Last Name -->
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label for="first_name"
@@ -1053,7 +1145,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Phone & Email -->
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label for="phone"
@@ -1076,7 +1167,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Country & Company -->
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label for="country"
@@ -1101,7 +1191,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Interactive Business Type Selector (All 6 Sectors) -->
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2 fade-text">
                                         <span data-i18n="formBusinessType">Votre Secteur d'Activité</span> <span
@@ -1171,7 +1260,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Message -->
                                 <div>
                                     <label for="message" class="block text-sm font-medium text-gray-700 mb-1 fade-text"
                                         data-i18n="formMessage">Message / Système existant ou besoins
@@ -1180,7 +1268,6 @@
                                         class="w-full px-4 py-2.5 bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all resize-none"></textarea>
                                 </div>
 
-                                <!-- Human Verification Checkbox -->
                                 <div
                                     class="flex items-center justify-between p-3.5 bg-gray-50/90 border border-gray-200 rounded-xl">
                                     <div class="flex items-center">
@@ -1246,9 +1333,9 @@
                 </p>
             </div>
             <div class="flex flex-col sm:flex-row items-center gap-4 sm:space-x-6 text-sm">
-                <a href="#secteurs" class="hover:text-white transition-colors" data-i18n="navSectors">Nos Secteurs</a>
-                <a href="#features" class="hover:text-white transition-colors" data-i18n="navFeatures">Ce que nous
-                    offrons</a>
+                <a href="#secteurs" class="hover:text-white transition-colors" data-i18n="navSectors">Nos services</a>
+                <a href="#features" class="hover:text-white transition-colors" data-i18n="navFeatures">Notre suite
+                    logicielle</a>
                 <a href="mailto:contact@fiscasol.com"
                     class="text-amber-400 hover:text-amber-300 font-medium transition-colors">contact@fiscasol.com</a>
             </div>
@@ -1272,48 +1359,34 @@
 
         const translations = {
             en: {
-                bannerTag: "Under Construction",
-                bannerText: "Our full website is currently under construction. Our team remains fully operational for all your DGI compliance projects.",
-                bannerContactBtn: "Contact Us",
-                navSectors: "Our Sectors",
-                navFeatures: "What We Offer",
+                bannerTag: "DGI ALERT",
+                bannerText: "Alert! The DGI in DRC now sanctions non-compliant taxpayers regarding electronic invoicing. Buyers can report offenders.",
+                navSectors: "Our Services",
+                navFeatures: "Our Software Suite",
                 navDemo: "Contact Us",
-                heroBadge: "Discover FISCASOL & iSFE",
-                heroConstructionBadge: "Website under construction • Services 100% operational",
-                heroTitle1: "Simplify Fiscal Compliance in",
-                heroSubtitle: "Normalized electronic invoicing solutions, ERP middleware, and point-of-sale (POS) systems fully compliant with DGI requirements. We support you all the way to full homologation.",
-                btnRequestDemo: "Contact an Expert / Demo",
-                btnLearnMore: "Explore Our Sectors",
+                heroBadge: "Fiscasol 2026 Suites",
+                heroConstructionBadge: "Our software suite for sales, payroll, and accounting",
+                heroTitle1: "DGI approved software solutions",
+                heroSubtitle: "Fiscasol Suite 2026 is a DGI-approved point-of-sale software solution tailored for service businesses, hotels, restaurants, bakeries, bars, shops, supermarkets, pharmacies, etc.",
+                btnRequestDemo: "Contact an Expert for a demo",
+                btnLearnMore: "Discover our normalized invoice solution",
                 heroDirectContact: "Direct contact:",
                 floatBadge1Title: "DGI Compliance",
                 floatBadge1Sub: "Normalized Invoices & QR",
                 floatBadge2Title: "ERP & Point of Sale",
                 floatBadge2Sub: "Real-Time & Offline Sync",
 
-                sectorsTag: "Business Sectors",
-                sectorsTitle: "Tailored solutions for every business size and industry",
-                sectorsSubtitle: "From middleware connected to large enterprise ERPs to specialized point-of-sale terminals, we address the operational realities of your industry.",
+                sectorsTag: "OUR SERVICES",
+                sectorsTitle: "Keep your invoicing software. Fiscasol handles compliance!",
+                sectorsSubtitle: "Already invested in billing software and don't want to change? Our plugin seamlessly integrates with your existing system to meet DGI compliance requirements.<br><br>With Fiscasol, benefit from the expertise and support needed to prepare and facilitate your homologation process.",
+
                 sec1Badge: "Large Enterprise • ERP & Middleware Integration",
-                sec1Title: "Invoice normalization solution for large enterprises",
-                sec1Desc1: "We offer a middleware designed to integrate seamlessly with your enterprise resource planning (ERP) software to facilitate and accelerate your compliance.",
-                sec1SubTitle: "Flexible middleware for accelerated compliance:",
-                sec1Desc2: "Thanks to an adaptable architecture, our middleware integrates into the heart of your existing systems to deliver a complete software solution, fully compliant with all DGI regulatory requirements.",
+                sec1Title: "Large Enterprises: Accelerate compliance without disrupting your billing system!",
+                sec1Desc: "Simplify compliance with Fiscasol using our middleware designed to integrate smoothly with your ERP or billing system. Automate data exchange, optimize billing processes, and fast-track compliance while preserving your existing workflows.<br><br>Our experts also assist you with homologation file preparation and test case drafting to speed up the process.",
+                sec1Bullet1: "<strong>Seamless Middleware:</strong> Integrates smoothly into your existing ERP.",
+                sec1Bullet2: "<strong>Fiscal Automation:</strong> Secures data and generates normalized invoices.",
                 sec1Cta: "Schedule an integration assessment",
 
-                sec2Title: "SMEs (PME)",
-                sec2Desc: "An agile, turnkey, and cost-effective solution to rapidly normalize your invoices. Manage quotes, customer invoices, credit notes, and DGI tax obligations without complicating daily operations.",
-                sec3Title: "Retail & Shops",
-                sec3Desc: "Fast checkout, real-time inventory tracking, multi-store management, and instant issuance of normalized receipts and invoices with the mandatory DGI QR code.",
-                sec4Title: "Restaurants",
-                sec4Desc: "Intuitive touch interface with floor plan and table status management, kitchen order routing, bill splitting, and immediate normalized invoice printing.",
-                sec5Title: "Supermarkets & Grocery",
-                sec5Desc: "Built for high-volume checkout lanes: high-speed barcode scanning, scale and payment terminal integration, offline resilience to never block sales, and automated X/Z closures.",
-                sec6Title: "Hotels & Hospitality",
-                sec6Desc: "Centralize room stays, restaurant, bar, and extra services onto a single folio. Issue normalized B2B (with customer Tax ID) or B2C invoices seamlessly at check-out.",
-
-                featuresTag: "Our Commitments & Services",
-                featuresTitle: "What We Offer",
-                featuresSubtitle: "A comprehensive approach combining certified fiscal technology, integration flexibility, and end-to-end support.",
                 feat1Title: "Security & DGI Compliance",
                 feat1Desc: "100% compliant with DGI requirements and specifications. Secure connection to fiscal control devices, cryptographic signature, and mandatory regulatory elements on every invoice.",
                 feat2Title: "Comprehensive Audit Trail",
@@ -1332,7 +1405,21 @@
                 feat5Pillar3Title: "User Manual",
                 feat5Pillar3Desc: "Delivery of official technical documentation and user manuals required for compliance and your teams.",
 
-                contactBadge: "Site under construction • Direct Contact",
+                featuresTag: "OUR COMMITMENTS & SERVICES",
+                featuresTitle: "Our Software Suite Fiscasol Suite 2026",
+                featuresSubtitle: "Our software suite Fiscasol Suite 2026 offers a DGI-approved billing solution in DRC. It generates normalized invoices and meets the needs of multiple business sectors.",
+
+                sec2Title: "SMEs (PME)",
+                sec2Desc: "An agile, turnkey, and cost-effective solution to rapidly normalize your invoices. Manage quotes, customer invoices, credit notes, and DGI tax obligations without complicating daily operations.",
+                sec3Title: "Retail & Shops",
+                sec3Desc: "Fast checkout, real-time inventory tracking, multi-store management, and instant issuance of normalized receipts and invoices with the mandatory DGI QR code.",
+                sec4Title: "Restaurants",
+                sec4Desc: "Intuitive touch interface with floor plan and table status management, kitchen order routing, bill splitting, and immediate normalized invoice printing.",
+                sec5Title: "Supermarkets & Grocery",
+                sec5Desc: "Built for high-volume checkout lanes: high-speed barcode scanning, scale and payment terminal integration, offline resilience to never block sales, and automated X/Z closures.",
+                sec6Title: "Hotels & Hospitality",
+                sec6Desc: "Centralize room stays, restaurant, bar, and extra services onto a single folio. Issue normalized B2B (with customer Tax ID) or B2C invoices seamlessly at check-out.",
+
                 contactTitle: "Who to contact?",
                 contactDesc: "While we finalize our website, our sales and technical team is fully available to assess your needs, schedule a demo, or launch your homologation process.",
                 contactDeptLabel: "Sales & Integration Department",
@@ -1366,48 +1453,34 @@
                 footerRights: "All rights reserved. Website currently under construction."
             },
             fr: {
-                bannerTag: "En construction",
-                bannerText: "Notre nouveau site web est en cours de finalisation. Nos équipes restent pleinement disponibles pour vos projets de conformité DGI.",
-                bannerContactBtn: "Nous contacter",
-                navSectors: "Nos Secteurs",
-                navFeatures: "Ce que nous offrons",
+                bannerTag: "ALERTE DGI",
+                bannerText: "La DGI en RDC <strong class='text-yellow-300 font-extrabold'>sanctionne désormais</strong> les contribuables qui ne sont pas en conformité avec la facturation normalisée. Les acheteurs peuvent signaler les contrevenants.",
+                navSectors: "Nos services",
+                navFeatures: "Notre suite logicielle",
                 navDemo: "Nous Contacter",
-                heroBadge: "Découvrez FISCASOL & iSFE",
-                heroConstructionBadge: "Portail en construction • Service 100% opérationnel",
-                heroTitle1: "Simplifiez la conformité fiscale en",
-                heroSubtitle: "Solutions de facturation électronique normalisée, intergiciel (middleware) pour ERP et systèmes de point de vente (PDV) conformes aux exigences de la DGI. Nous vous accompagnons jusqu'à l'homologation complète.",
-                btnRequestDemo: "Contacter un Expert / Démo",
-                btnLearnMore: "Découvrir nos Secteurs",
+                heroBadge: "Fiscasol 2026 Suites",
+                heroConstructionBadge: "Notre suite logicielle pour les ventes, la paie et la comptabilité",
+                heroTitle1: "Solutions logicielles homologuées par la",
+                heroSubtitle: "La Suite Fiscasol 2026 est une solution logicielle de gestion des points de vente homologuée par la DGI et adaptée aux entreprises de services, hôtels, restaurants, boulangeries, pâtisseries, bars, boutiques, supermarchés, pharmacies, etc.",
+                btnRequestDemo: "Contacter un Expert pour une démo",
+                btnLearnMore: "Découvrir notre solution des factures normalisées",
                 heroDirectContact: "Contact direct :",
                 floatBadge1Title: "Conformité DGI",
                 floatBadge1Sub: "Factures Normalisées & QR",
                 floatBadge2Title: "ERP & Point de Vente",
                 floatBadge2Sub: "Synchronisation & Hors-Ligne",
 
-                sectorsTag: "Secteurs d'Activité",
-                sectorsTitle: "Des solutions adaptées à chaque taille et secteur d'entreprise",
-                sectorsSubtitle: "De l'intergiciel connecté aux ERP des grandes entreprises jusqu'aux points de vente spécialisés, nous répondons aux réalités opérationnelles de votre métier.",
+                sectorsTag: "NOS SERVICES",
+                sectorsTitle: "Gardez votre logiciel de facturation. Fiscasol s’occupe de la conformité !",
+                sectorsSubtitle: "Vous avez déjà investi dans un logiciel de facturation et ne souhaitez pas en changer ? Notre plugin s’intègre facilement à votre système existant pour vous aider à répondre aux exigences de conformité de la DGI.<br><br>Avec Fiscasol, bénéficiez de l’expertise et de l’accompagnement nécessaires pour préparer et faciliter votre démarche d’homologation.",
+
                 sec1Badge: "Grande Entreprise • Intégration ERP & Middleware",
-                sec1Title: "Solution de normalisation des factures pour les grandes entreprises",
-                sec1Desc1: "Nous proposons un intergiciel (middleware) conçu pour s'intégrer en toute fluidité à votre progiciel de gestion (ERP) afin de faciliter et accélérer votre mise en conformité.",
-                sec1SubTitle: "Un intergiciel flexible pour une conformité accélérée :",
-                sec1Desc2: "Grâce à une architecture adaptable, notre middleware s'intègre au cœur de vos systèmes existants pour délivrer une solution logicielle complète, pleinement conforme à l'ensemble des exigences réglementaires de la DGI.",
+                sec1Title: "Grandes entreprises : accélérez votre mise en conformité sans bouleverser votre système de facturation !",
+                sec1Desc: "Simplifiez votre mise en conformité avec Fiscasol grâce à notre intergiciel (middleware), conçu pour s’intégrer harmonieusement à votre progiciel de gestion intégré (ERP) ou système de facturation. Automatisez les échanges de données, optimisez vos processus de facturation et accélérez votre mise en conformité, tout en préservant le fonctionnement de votre système existant.<br><br>Nos experts vous accompagneront également dans la constitution du dossier de demande d’homologation ainsi que dans la rédaction des cas de test, afin de faciliter et d’accélérer le processus d’homologation.",
+                sec1Bullet1: "<strong>Intergiciel transparent :</strong> S’intègre harmonieusement à votre ERP existant.",
+                sec1Bullet2: "<strong>Automatisation :</strong> Sécurise les échanges et génère la facture normalisée.",
                 sec1Cta: "Planifier une étude d'intégration",
 
-                sec2Title: "PME",
-                sec2Desc: "Une solution clé en main, agile et accessible pour normaliser vos factures rapidement. Gérez vos devis, factures clients, avoirs et obligations fiscales DGI sans alourdir votre gestion quotidienne.",
-                sec3Title: "Commerce & Boutiques",
-                sec3Desc: "Encaissement rapide au comptoir, suivi des stocks en temps réel, gestion multi-magasins et émission instantanée de tickets et factures normalisés avec code QR réglementaire DGI.",
-                sec4Title: "Restaurant",
-                sec4Desc: "Interface tactile intuitive avec gestion du plan de salle et statut des tables, envoi des commandes en cuisine, division d'additions et impression immédiate de la facture normalisée.",
-                sec5Title: "Alimentation & Supermarchés",
-                sec5Desc: "Conçu pour les forts flux en caisse : lecture code-barres haute vitesse, connexion aux balances et TPE, résilience hors-ligne pour ne jamais bloquer vos ventes et clôtures X/Z simplifiées.",
-                sec6Title: "Hôtel & Hébergement",
-                sec6Desc: "Centralisez la facturation des séjours, du restaurant, du bar et des prestations annexes sur une note unique. Émettez des factures normalisées B2B (avec NIF client) ou B2C en toute fluidité lors du check-out.",
-
-                featuresTag: "Nos Engagements & Services",
-                featuresTitle: "Ce que nous offrons",
-                featuresSubtitle: "Une approche complète alliant technologie fiscale certifiée, flexibilité d'intégration et accompagnement de bout en bout.",
                 feat1Title: "Sécurité & Conformité DGI",
                 feat1Desc: "Solution 100% conforme aux demandes et cahiers des charges de la DGI. Connexion sécurisée au dispositif fiscal, signature électronique et génération des éléments réglementaires sur chaque facture.",
                 feat2Title: "Piste d'Audit Complète",
@@ -1426,7 +1499,21 @@
                 feat5Pillar3Title: "Manuel d'Utilisation",
                 feat5Pillar3Desc: "Fourniture de la documentation technique et du manuel d'utilisation requis pour la conformité et vos équipes.",
 
-                contactBadge: "Site en construction • Contact Direct",
+                featuresTag: "NOS ENGAGEMENTS & SERVICES",
+                featuresTitle: "Notre suite logicielle Fiscasol Suite 2026",
+                featuresSubtitle: "Notre suite logicielle Fiscasol Suite 2026 propose une solution de facturation homologuée par la DGI en RDC. Elle permet de produire des factures normalisées et de répondre aux besoins de plusieurs secteurs d'activités.",
+
+                sec2Title: "PME",
+                sec2Desc: "Une solution clé en main, agile et accessible pour normaliser vos factures rapidement. Gérez vos devis, factures clients, avoirs et obligations fiscales DGI sans alourdir votre gestion quotidienne.",
+                sec3Title: "Commerce & Boutiques",
+                sec3Desc: "Encaissement rapide au comptoir, suivi des stocks en temps réel, gestion multi-magasins et émission instantanée de tickets et factures normalisés avec code QR réglementaire DGI.",
+                sec4Title: "Restaurant",
+                sec4Desc: "Interface tactile intuitive avec gestion du plan de salle et statut des tables, envoi des commandes en cuisine, division d'additions et impression immédiate de la facture normalisée.",
+                sec5Title: "Alimentation & Supermarchés",
+                sec5Desc: "Conçu pour les forts flux en caisse : lecture code-barres haute vitesse, connexion aux balances et TPE, résilience hors-ligne pour ne jamais bloquer vos ventes et clôtures X/Z simplifiées.",
+                sec6Title: "Hôtel & Hébergement",
+                sec6Desc: "Centralisez la facturation des séjours, du restaurant, du bar et des prestations annexes sur une note unique. Émettez des factures normalisées B2B (avec NIF client) ou B2C en toute fluidité lors du check-out.",
+
                 contactTitle: "Qui contacter ?",
                 contactDesc: "Pendant la mise à jour de notre site web, notre équipe commerciale et technique est à votre entière disposition pour étudier votre besoin, planifier une démonstration ou lancer votre homologation.",
                 contactDeptLabel: "Direction Commerciale & Intégration",
@@ -1647,10 +1734,8 @@
         }
     </script>
 
-
-
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/243835933727?text=Bonjour,%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20la%20facture%20normalisée%20DGI."
+    <a href="https://wa.me/243835933727?text=Bonjour,%20je%20souhaite%20avoir%20plus%20d%27informations%20sur%20la%20facture%20normalis%C3%A9e%20DGI."
         class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
             <path
